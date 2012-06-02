@@ -22,6 +22,7 @@ import com.sohu.sql4nosql.SqlConstants;
 
 
 /**
+ * this is a utils like commons-lang but more function
  * @author user
  *
  */
