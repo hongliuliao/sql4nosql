@@ -8,6 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.beanutils.BeanMap;
+
 import com.sohu.sql4nosql.QuerySqlStruct;
 import com.sohu.sql4nosql.SqlConstants;
 import com.sohu.sql4nosql.utils.AntlrUtils;
@@ -19,6 +21,7 @@ import com.sohu.sql4nosql.utils.CommonUtils;
  */
 public class Sql4PojoListConverter {
 	
+	@SuppressWarnings("unchecked")
 	public List<Map<String,?>> queryFromPojoList(String sql,List<?> pojoList){
 		List<Map<String,?>> result = new ArrayList<Map<String,?>>();
 		if(pojoList == null || pojoList.size() == 0){
@@ -30,7 +33,8 @@ public class Sql4PojoListConverter {
 			pojoList = this.filterPojo(pojoList, sqlStruct);
 			if(sqlStruct.isSelectAll()){
 				for (Object pojo : pojoList) {
-					result.add(CommonUtils.Object2Map(pojo));
+					BeanMap beanMap = new BeanMap(pojo);
+					result.add(beanMap);
 				}
 			}else{
 				List<String> fieldNames = sqlStruct.getSelectFields();

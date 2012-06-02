@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -104,42 +103,6 @@ public class CommonUtils {
 		}else{
 			return name;
 		}
-	}
-	/**
-	 * 将查询条件封装的对象转换为map
-	 * @param obj
-	 * @return map的key为属性名,value为属性值
-	 */
-	public static Map<String,Object> Object2Map(Object obj){
-		return getFieldValueEx(obj,new LinkedHashMap<String,Object>());
-	}
-	/**
-	 * 递归的获得属性对应的值(不同的是层次信息丢失,而且对象不会作为map的主键)
-	 * @param obj 要获得值的对象
-	 * @param valuesMap 为了递归的实现,建议使用new HashMap();
-	 * @return map中key为属性名,value为值
-	 */
-	private static Map<String,Object> getFieldValueEx(Object obj,Map<String,Object> valuesMap){
-		Class<?> clazz=obj.getClass();
-		try {
-			Field[] fields=clazz.getDeclaredFields();
-			for(int i=0;i<fields.length;i++){
-				if(constType.contains(fields[i].getType())){
-					Object temp=CommonUtils.getPropertyString(obj, fields[i].getName());
-					if(temp!=null){
-						valuesMap.put(fields[i].getName(), temp);
-					}
-				}else{
-					Object oo=CommonUtils.getPropertyString(obj, fields[i].getName());
-					if(oo!=null){
-						getFieldValueEx(oo, valuesMap);
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return valuesMap;
 	}
 	/**
 	 * 根据字段名来获得字段,支持两级
