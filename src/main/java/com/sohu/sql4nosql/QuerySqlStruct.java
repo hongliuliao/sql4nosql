@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * the struct of the query sql
  * @author Administrator
  *
  */
