@@ -4,11 +4,7 @@
 package com.sohu.sql4nosql.utils;
 
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -27,45 +23,25 @@ import com.sohu.sql4nosql.SqlConstants;
  */
 public class CommonUtils {
 
-	public static List<Class<?>> constType=new ArrayList<Class<?>>();
-	static{
-		constType.add(Long.class);
-		constType.add(Integer.class);
-		constType.add(Double.class);
-		constType.add(Float.class);
-		constType.add(java.util.Date.class);
-		constType.add(java.sql.Date.class);
-		constType.add(String.class);
-		constType.add(Boolean.class);
-		constType.add(Timestamp.class);
-		constType.add(BigDecimal.class);
-		constType.add(long.class);
-		constType.add(int.class);
-		constType.add(double.class);
-		constType.add(boolean.class);
-		constType.add(float.class);
-	}
 	public static void setProperty(Object obj,String name,Object value){
 		try {
 			BeanUtils.setProperty(obj, name, value);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new RuntimeException("can not set property value which propertyName:"+name+",value:"+value,e);
 		} 
 	}
 	public static String getPropertyString(Object obj,String name){
 		try {
 			return BeanUtils.getProperty(obj, name);
 		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+			throw new RuntimeException("can not get property string value which propertyName:"+name,e);
 		} 
 	}
 	public static Object getProperty(Object obj,String name){
 		try {
 			return PropertyUtils.getProperty(obj, name);
 		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+			throw new RuntimeException("can not get property value which propertyName:"+name,e);
 		} 
 	}
 	
@@ -77,19 +53,6 @@ public class CommonUtils {
 	 */
 	public static boolean isValidString(String str){
 		return str!=null&&str.trim().length()>0;
-	}
-	/**
-	 * 得到多个小数点格式的字符串的最后一个
-	 * @param name 字符串
-	 * @return 截取后的字符串
-	 */
-	public static String getSimpleName(String name){
-		if(name.lastIndexOf(".")!=-1){
-			String temp=name.substring(name.lastIndexOf(".")+1);
-			return temp;
-		}else{
-			return name;
-		}
 	}
 	/**
 	 * 得到多个小数点格式的字符串的最开始一个
