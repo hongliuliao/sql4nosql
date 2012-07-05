@@ -1,11 +1,11 @@
 grammar QuerySql;
 
 @header{
-package com.sohu.sql4nosql;
+package com.sohu.sql4nosql.build;
 import java.util.HashMap;
 }
 @lexer::header{
-package com.sohu.sql4nosql;
+package com.sohu.sql4nosql.build;
 }
 
 querySql returns [HashMap result]
