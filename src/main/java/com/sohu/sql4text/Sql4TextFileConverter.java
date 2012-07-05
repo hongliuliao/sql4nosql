@@ -17,8 +17,29 @@ import com.sohu.sql4nosql.utils.TextFileUtils.MultiLineHandler;
  * 2012-2-23 下午09:22:22
  */
 public class Sql4TextFileConverter {
+	/**
+	 * The fieldName which used in sql and the sort order must match the order which split by splitChar
+	 */
+	private String[] fieldNames;
+	/**
+	 * the orgin file path
+	 */
+	private String filePath;
+	/**
+	 * the orgin file encode default is utf-8
+	 */
+	private String fileEncode = "utf-8";
+	/**
+	 * the split char which split the file each line default is ","
+	 */
+	private String splitChar = ",";
 	
-	public List<String> queryForTextFile(final String sql,String filePath,String fileEncode,final String splitChar,String[] fieldNames){
+	public Sql4TextFileConverter(String[] fieldNames, String filePath) {
+		super();
+		this.fieldNames = fieldNames;
+		this.filePath = filePath;
+	}
+	public List<String> queryForTextFile(final String sql){
 		if(fieldNames == null || fieldNames.length == 0){
 			throw new IllegalArgumentException("arg fieldNames can not be null!");
 		}
@@ -85,6 +106,12 @@ public class Sql4TextFileConverter {
 	 * @return 查询到的记录
 	 */
 	public List<String> queryForTextFile(final String sql,String filePath,String[] fieldNames){
-		return this.queryForTextFile(sql, filePath, "gbk", ",", fieldNames);
+		return this.queryForTextFile(sql);
+	}
+	public void setFileEncode(String fileEncode) {
+		this.fileEncode = fileEncode;
+	}
+	public void setSplitChar(String splitChar) {
+		this.splitChar = splitChar;
 	}
 }

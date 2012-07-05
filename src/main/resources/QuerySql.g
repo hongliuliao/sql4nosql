@@ -14,7 +14,6 @@ querySql returns [HashMap result]
 		if($whereStatement.result != null){
 			result.putAll($whereStatement.result);
 		}
-		System.out.println(result);
 	};
 
 selectFromStatement returns [HashMap result]
