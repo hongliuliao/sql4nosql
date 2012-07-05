@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g 2012-07-05 17:09:04
+// $ANTLR 3.4 /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g 2012-07-05 18:29:41
 
 package com.sohu.sql4nosql.build;
 import java.util.HashMap;
@@ -94,7 +94,6 @@ public class QuerySqlParser extends Parser {
             		if(whereStatement2 != null){
             			result.putAll(whereStatement2);
             		}
-            		System.out.println(result);
             	
 
             }
@@ -115,7 +114,7 @@ public class QuerySqlParser extends Parser {
 
 
     // $ANTLR start "selectFromStatement"
-    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:20:1: selectFromStatement returns [HashMap result] : selectStatement fromStatement ;
+    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:19:1: selectFromStatement returns [HashMap result] : selectStatement fromStatement ;
     public final HashMap selectFromStatement() throws RecognitionException {
         HashMap result = null;
 
@@ -126,8 +125,8 @@ public class QuerySqlParser extends Parser {
 
 
         try {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:21:2: ( selectStatement fromStatement )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:21:4: selectStatement fromStatement
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:20:2: ( selectStatement fromStatement )
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:20:4: selectStatement fromStatement
             {
             pushFollow(FOLLOW_selectStatement_in_selectFromStatement46);
             selectStatement3=selectStatement();
@@ -164,7 +163,7 @@ public class QuerySqlParser extends Parser {
 
 
     // $ANTLR start "selectStatement"
-    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:25:1: selectStatement returns [HashMap result] : SELECT SELECTFIELD ;
+    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:24:1: selectStatement returns [HashMap result] : SELECT SELECTFIELD ;
     public final HashMap selectStatement() throws RecognitionException {
         HashMap result = null;
 
@@ -172,8 +171,8 @@ public class QuerySqlParser extends Parser {
         Token SELECTFIELD5=null;
 
         try {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:26:2: ( SELECT SELECTFIELD )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:26:4: SELECT SELECTFIELD
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:25:2: ( SELECT SELECTFIELD )
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:25:4: SELECT SELECTFIELD
             {
             match(input,SELECT,FOLLOW_SELECT_in_selectStatement61); 
 
@@ -202,7 +201,7 @@ public class QuerySqlParser extends Parser {
 
 
     // $ANTLR start "fromStatement"
-    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:30:1: fromStatement returns [HashMap result] : FROMSTATEMENT ;
+    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:29:1: fromStatement returns [HashMap result] : FROMSTATEMENT ;
     public final HashMap fromStatement() throws RecognitionException {
         HashMap result = null;
 
@@ -210,8 +209,8 @@ public class QuerySqlParser extends Parser {
         Token FROMSTATEMENT6=null;
 
         try {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:31:2: ( FROMSTATEMENT )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:31:4: FROMSTATEMENT
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:30:2: ( FROMSTATEMENT )
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:30:4: FROMSTATEMENT
             {
             FROMSTATEMENT6=(Token)match(input,FROMSTATEMENT,FOLLOW_FROMSTATEMENT_in_fromStatement77); 
 
@@ -239,7 +238,7 @@ public class QuerySqlParser extends Parser {
 
 
     // $ANTLR start "whereStatement"
-    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:36:1: whereStatement returns [HashMap result] : WHERESATEMENT OPTION FIELDVALUE ;
+    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:35:1: whereStatement returns [HashMap result] : WHERESATEMENT OPTION FIELDVALUE ;
     public final HashMap whereStatement() throws RecognitionException {
         HashMap result = null;
 
@@ -249,8 +248,8 @@ public class QuerySqlParser extends Parser {
         Token FIELDVALUE9=null;
 
         try {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:37:3: ( WHERESATEMENT OPTION FIELDVALUE )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:37:5: WHERESATEMENT OPTION FIELDVALUE
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:36:3: ( WHERESATEMENT OPTION FIELDVALUE )
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:36:5: WHERESATEMENT OPTION FIELDVALUE
             {
             WHERESATEMENT7=(Token)match(input,WHERESATEMENT,FOLLOW_WHERESATEMENT_in_whereStatement91); 
 
