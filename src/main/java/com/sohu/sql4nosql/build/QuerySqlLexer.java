@@ -1,6 +1,6 @@
 // $ANTLR 3.4 /C:/Documents and Settings/Administrator/git/sql4nosql/target/classes/QuerySql.g 2012-06-02 14:38:25
 
-package com.sohu.sql4nosql;
+package com.sohu.sql4nosql.build;
 
 
 import org.antlr.runtime.*;

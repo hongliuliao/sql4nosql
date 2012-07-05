@@ -14,6 +14,6 @@ public class Builder {
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		String filePath = ClassLoader.getSystemResource("QuerySql.g").getFile();
 		filePath = java.net.URLDecoder.decode(filePath, "gbk");
-		org.antlr.Tool.main(new String[] {"-o","src/main/java/com/sohu/sql4nosql",filePath});
+		org.antlr.Tool.main(new String[] {"-o","src/main/java/com/sohu/sql4nosql/build/",filePath});
 	}
 }

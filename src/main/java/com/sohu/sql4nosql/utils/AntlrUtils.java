@@ -8,9 +8,9 @@ import java.util.Map;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CommonTokenStream;
 
-import com.sohu.sql4nosql.QuerySqlLexer;
-import com.sohu.sql4nosql.QuerySqlParser;
 import com.sohu.sql4nosql.QuerySqlStruct;
+import com.sohu.sql4nosql.build.QuerySqlLexer;
+import com.sohu.sql4nosql.build.QuerySqlParser;
 
 /**
  * @author liaohongliu
