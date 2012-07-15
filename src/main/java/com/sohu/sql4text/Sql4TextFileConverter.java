@@ -6,6 +6,7 @@ package com.sohu.sql4text;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sohu.sql4nosql.ISql4nosql;
 import com.sohu.sql4nosql.QuerySqlStruct;
 import com.sohu.sql4nosql.utils.AntlrUtils;
 import com.sohu.sql4nosql.utils.TextFileUtils;
@@ -16,7 +17,7 @@ import com.sohu.sql4nosql.utils.TextFileUtils.MultiLineHandler;
  *
  * 2012-2-23 下午09:22:22
  */
-public class Sql4TextFileConverter {
+public class Sql4TextFileConverter implements ISql4nosql{
 	/**
 	 * The fieldName which used in sql and the sort order must match the order which split by splitChar
 	 */
@@ -39,7 +40,7 @@ public class Sql4TextFileConverter {
 		this.fieldNames = fieldNames;
 		this.filePath = filePath;
 	}
-	public List<String> queryForTextFile(final String sql){
+	public List<String> queryForList(final String sql,Object...params){
 		if(fieldNames == null || fieldNames.length == 0){
 			throw new IllegalArgumentException("arg fieldNames can not be null!");
 		}
@@ -106,7 +107,7 @@ public class Sql4TextFileConverter {
 	 * @return 查询到的记录
 	 */
 	public List<String> queryForTextFile(final String sql,String filePath,String[] fieldNames){
-		return this.queryForTextFile(sql);
+		return this.queryForList(sql);
 	}
 	public void setFileEncode(String fileEncode) {
 		this.fileEncode = fileEncode;

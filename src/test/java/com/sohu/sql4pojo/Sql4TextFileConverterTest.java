@@ -25,8 +25,8 @@ public class Sql4TextFileConverterTest {
 		converter = new Sql4TextFileConverter(new String[]{"id","userName","birthday"},testFilePath);
 	}
 	@Test
-	public void testQueryForTextFile() throws UnsupportedEncodingException{
-		List<String> result = this.converter.queryForTextFile("select id,userName from Users where id=2");
+	public void testQueryForList() throws UnsupportedEncodingException{
+		List<String> result = this.converter.queryForList("select id,userName from Users where id=2");
 		System.out.println(result);
 	}
 }
