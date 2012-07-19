@@ -23,7 +23,7 @@ import com.sohu.sql4nosql.utils.AntlrUtils;
 import com.sohu.sql4nosql.utils.Page;
 
 /**
- * 
+ * Use sql query from lucene index
  * @author hongliuliao
  *
  * CreateDate:2012-7-19 обнГ03:38:45

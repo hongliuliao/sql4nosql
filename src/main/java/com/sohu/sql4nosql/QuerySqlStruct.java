@@ -20,9 +20,21 @@ public class QuerySqlStruct {
 	 * ²éÑ¯µÄ×Ö¶Î
 	 */
 	private List<String> selectFields;
+	/**
+	 * filt field name
+	 */
 	private String whereFieldName;
+	/**
+	 * the option char on field ,for example > < = etc.
+	 */
 	private String option;
+	/**
+	 * the filt value
+	 */
 	private String fieldValue;
+	/**
+	 * Select table's name
+	 */
 	private String tableName;
 	
 	public String getFieldValue() {
