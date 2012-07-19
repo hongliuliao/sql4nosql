@@ -23,6 +23,7 @@ public class QuerySqlStruct {
 	private String whereFieldName;
 	private String option;
 	private String fieldValue;
+	private String tableName;
 	
 	public String getFieldValue() {
 		return fieldValue;
@@ -63,5 +64,11 @@ public class QuerySqlStruct {
 	}
 	public boolean hasWhere(){
 		return this.getWhereFieldName()!=null && !this.getWhereFieldName().trim().equals("");
+	}
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
 	}
 }

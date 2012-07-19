@@ -104,6 +104,7 @@ public class CommonUtils {
 		sqlStruct.setWhereFieldName(sqlMap.get(Sql4nosqlConstants.WHEREFIELDNAME));
 		sqlStruct.setOption(sqlMap.get(Sql4nosqlConstants.OPTION));
 		sqlStruct.setFieldValue(sqlMap.get(Sql4nosqlConstants.FIELDVALUE));
+		sqlStruct.setTableName(sqlMap.get(Sql4nosqlConstants.TABLENAME));
 		return sqlStruct;
 	}
 }
