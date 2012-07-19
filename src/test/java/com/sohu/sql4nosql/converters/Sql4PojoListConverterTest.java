@@ -1,4 +1,4 @@
-package com.sohu.sql4pojo;
+package com.sohu.sql4nosql.converters;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.sohu.sql4nosql.converters.Sql4PojoListConverter;
 
 public class Sql4PojoListConverterTest {
 	public List<MockUser> users = new ArrayList<MockUser>();

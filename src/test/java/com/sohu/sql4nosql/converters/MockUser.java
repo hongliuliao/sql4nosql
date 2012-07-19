@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sohu.sql4pojo;
+package com.sohu.sql4nosql.converters;
 
 import java.util.Date;
 

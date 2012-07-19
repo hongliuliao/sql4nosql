@@ -1,7 +1,7 @@
 /**
  * $Id$
  */
-package com.sohu.sql4mongo;
+package com.sohu.sql4nosql.converters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,6 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
-import com.sohu.sql4nosql.ISql4nosql;
 import com.sohu.sql4nosql.QuerySqlStruct;
 import com.sohu.sql4nosql.utils.AntlrUtils;
 
@@ -22,10 +21,10 @@ import com.sohu.sql4nosql.utils.AntlrUtils;
  *
  * CreateDate:2012-7-18 ÏÂÎç08:23:59
  */
-public class Sql4mongo implements ISql4nosql {
+public class Sql4mongoConverter implements ISql4nosqlConverter {
 	private DB db;
 	
-	public Sql4mongo(String host, int port, String dbName) {
+	public Sql4mongoConverter(String host, int port, String dbName) {
 		try {
 			Mongo mongo = new Mongo(host, port);
 			db = mongo.getDB(dbName);

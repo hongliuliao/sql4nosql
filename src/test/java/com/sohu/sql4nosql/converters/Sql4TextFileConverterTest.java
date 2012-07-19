@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sohu.sql4pojo;
+package com.sohu.sql4nosql.converters;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sohu.sql4text.Sql4TextFileConverter;
+import com.sohu.sql4nosql.converters.Sql4TextFileConverter;
 
 /**
  * @author liaohongliu

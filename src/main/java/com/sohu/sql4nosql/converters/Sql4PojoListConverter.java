@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sohu.sql4pojo;
+package com.sohu.sql4nosql.converters;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -10,7 +10,6 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.BeanMap;
 
-import com.sohu.sql4nosql.ISql4nosql;
 import com.sohu.sql4nosql.QuerySqlStruct;
 import com.sohu.sql4nosql.SqlConstants;
 import com.sohu.sql4nosql.utils.AntlrUtils;
@@ -20,7 +19,7 @@ import com.sohu.sql4nosql.utils.CommonUtils;
  * @author Administrator
  *
  */
-public class Sql4PojoListConverter implements ISql4nosql{
+public class Sql4PojoListConverter implements ISql4nosqlConverter{
 	
 	private List<?> pojoList;
 	

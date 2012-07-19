@@ -1,12 +1,11 @@
 /**
  * 
  */
-package com.sohu.sql4text;
+package com.sohu.sql4nosql.converters;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sohu.sql4nosql.ISql4nosql;
 import com.sohu.sql4nosql.QuerySqlStruct;
 import com.sohu.sql4nosql.utils.AntlrUtils;
 import com.sohu.sql4nosql.utils.TextFileUtils;
@@ -17,7 +16,7 @@ import com.sohu.sql4nosql.utils.TextFileUtils.MultiLineHandler;
  *
  * 2012-2-23 ÏÂÎç09:22:22
  */
-public class Sql4TextFileConverter implements ISql4nosql{
+public class Sql4TextFileConverter implements ISql4nosqlConverter{
 	/**
 	 * The fieldName which used in sql and the sort order must match the order which split by splitChar
 	 */
