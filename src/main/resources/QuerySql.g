@@ -44,7 +44,7 @@ whereStatement returns [HashMap result]
 
 SELECT:('select'|'SELECT')WS+ ;
 SELECTFIELD:('*'|NAME (',' NAME)*) WS+;
-fragment NAME:('a'..'z'|'A'..'Z')+;
+fragment NAME:('a'..'z'|'A'..'Z'|'_')+;
 FROMSTATEMENT	:('from'|'FROM') WS+ NAME;
 WHERESATEMENT	:	WS+ ('where'|'WHERE') WS+ NAME ;
 OPTION	:	WS? ('>'|'<'|'=') WS?;

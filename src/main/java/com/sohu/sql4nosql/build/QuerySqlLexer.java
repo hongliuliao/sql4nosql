@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g 2012-07-05 18:29:42
+// $ANTLR 3.4 /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g 2012-07-19 13:39:44
 
 package com.sohu.sql4nosql.build;
 
@@ -148,7 +148,7 @@ public class QuerySqlLexer extends Lexer {
             if ( (LA4_0=='*') ) {
                 alt4=1;
             }
-            else if ( ((LA4_0 >= 'A' && LA4_0 <= 'Z')||(LA4_0 >= 'a' && LA4_0 <= 'z')) ) {
+            else if ( ((LA4_0 >= 'A' && LA4_0 <= 'Z')||LA4_0=='_'||(LA4_0 >= 'a' && LA4_0 <= 'z')) ) {
                 alt4=2;
             }
             else {
@@ -260,17 +260,17 @@ public class QuerySqlLexer extends Lexer {
     // $ANTLR start "NAME"
     public final void mNAME() throws RecognitionException {
         try {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:14: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:15: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:14: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:15: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
             int cnt6=0;
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0 >= 'A' && LA6_0 <= 'Z')||(LA6_0 >= 'a' && LA6_0 <= 'z')) ) {
+                if ( ((LA6_0 >= 'A' && LA6_0 <= 'Z')||LA6_0=='_'||(LA6_0 >= 'a' && LA6_0 <= 'z')) ) {
                     alt6=1;
                 }
 
@@ -279,7 +279,7 @@ public class QuerySqlLexer extends Lexer {
             	case 1 :
             	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
             	    {
-            	    if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+            	    if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
             	        input.consume();
             	    }
             	    else {
@@ -808,57 +808,57 @@ public class QuerySqlLexer extends Lexer {
         "\37\uffff}>";
     static final String[] DFA15_transitionS = {
             "\2\6\2\uffff\1\6\22\uffff\1\6\6\uffff\1\10\2\uffff\1\3\5\uffff"+
-            "\12\10\2\uffff\3\7\2\uffff\5\3\1\5\14\3\1\2\7\3\6\uffff\5\3"+
-            "\1\4\14\3\1\1\7\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\4\3\1\11\25\3",
+            "\12\10\2\uffff\3\7\2\uffff\5\3\1\5\14\3\1\2\7\3\4\uffff\1\3"+
+            "\1\uffff\5\3\1\4\14\3\1\1\7\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\4\3\1\11\25\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\4\3\1\12"+
-            "\25\3\6\uffff\32\3",
+            "\25\3\4\uffff\1\3\1\uffff\32\3",
             "",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\21\3\1\13\10\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\21\3\1\13\10\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\21\3\1"+
-            "\14\10\3\6\uffff\32\3",
+            "\14\10\3\4\uffff\1\3\1\uffff\32\3",
             "\2\15\2\uffff\1\15\22\uffff\1\15\33\uffff\3\7\30\uffff\1\15"+
             "\37\uffff\1\15",
             "",
             "",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\13\3\1\17\16\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\13\3\1\17\16\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\13\3\1"+
-            "\20\16\3\6\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\16\3\1\21\13\3",
+            "\20\16\3\4\uffff\1\3\1\uffff\32\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\16\3\1\21\13\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\16\3\1"+
-            "\22\13\3\6\uffff\32\3",
+            "\22\13\3\4\uffff\1\3\1\uffff\32\3",
             "",
             "",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\4\3\1\23\25\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\4\3\1\23\25\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\4\3\1\24"+
-            "\25\3\6\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\14\3\1\25\15\3",
+            "\25\3\4\uffff\1\3\1\uffff\32\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\14\3\1\25\15\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\14\3\1"+
-            "\26\15\3\6\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\2\3\1\27\27\3",
+            "\26\15\3\4\uffff\1\3\1\uffff\32\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\2\3\1\27\27\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\2\3\1\30"+
-            "\27\3\6\uffff\32\3",
+            "\27\3\4\uffff\1\3\1\uffff\32\3",
             "\2\31\2\uffff\1\31\22\uffff\1\31\13\uffff\1\3\24\uffff\32\3"+
-            "\6\uffff\32\3",
+            "\4\uffff\1\3\1\uffff\32\3",
             "\2\31\2\uffff\1\31\22\uffff\1\31\13\uffff\1\3\24\uffff\32\3"+
-            "\6\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\6"+
-            "\uffff\23\3\1\32\6\3",
+            "\4\uffff\1\3\1\uffff\32\3",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
+            "\uffff\1\3\1\uffff\23\3\1\32\6\3",
             "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\23\3\1"+
-            "\33\6\3\6\uffff\32\3",
-            "\2\31\2\uffff\1\31\22\uffff\1\31\40\uffff\32\34\6\uffff\32"+
-            "\34",
+            "\33\6\3\4\uffff\1\3\1\uffff\32\3",
+            "\2\31\2\uffff\1\31\22\uffff\1\31\40\uffff\32\34\4\uffff\1\34"+
+            "\1\uffff\32\34",
             "\2\35\2\uffff\1\35\22\uffff\1\35\13\uffff\1\3\24\uffff\32\3"+
-            "\6\uffff\32\3",
+            "\4\uffff\1\3\1\uffff\32\3",
             "\2\35\2\uffff\1\35\22\uffff\1\35\13\uffff\1\3\24\uffff\32\3"+
-            "\6\uffff\32\3",
+            "\4\uffff\1\3\1\uffff\32\3",
             "",
             "\2\35\2\uffff\1\35\22\uffff\1\35",
             ""

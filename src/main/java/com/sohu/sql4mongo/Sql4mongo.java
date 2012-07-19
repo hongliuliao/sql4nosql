@@ -25,7 +25,7 @@ import com.sohu.sql4nosql.utils.AntlrUtils;
 public class Sql4mongo implements ISql4nosql {
 	private DB db;
 	
-	public Sql4mongo(String host, int port, String dbName, String collectionName) {
+	public Sql4mongo(String host, int port, String dbName) {
 		try {
 			Mongo mongo = new Mongo(host, port);
 			db = mongo.getDB(dbName);
@@ -39,7 +39,7 @@ public class Sql4mongo implements ISql4nosql {
 		String collectionName = sqlStruct.getTableName();
 		DBCollection collection = db.getCollection(collectionName);
 		BasicDBObject query = new BasicDBObject();
-		query.put(sqlStruct.getWhereFieldName(), sqlStruct.getFieldValue());
+		query.put(sqlStruct.getWhereFieldName(), sqlStruct.getFieldValue().replaceAll("'", ""));
 		DBCursor cursor = collection.find(query);
 		List<DBObject> dbObjects = new ArrayList<DBObject>();
 		while(cursor.hasNext()) {
