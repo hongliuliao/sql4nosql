@@ -19,7 +19,7 @@ import com.sohu.sql4nosql.utils.CommonUtils;
  * @author Administrator
  *
  */
-public class Sql4PojoListConverter implements ISql4nosqlConverter{
+public class Sql4PojoListConverter implements ISql4NosqlConverter{
 	
 	private List<?> pojoList;
 	

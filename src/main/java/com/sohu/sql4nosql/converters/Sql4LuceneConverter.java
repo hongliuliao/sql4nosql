@@ -28,7 +28,7 @@ import com.sohu.sql4nosql.utils.Page;
  *
  * CreateDate:2012-7-19 обнГ03:38:45
  */
-public class Sql4LuceneConverter implements ISql4nosqlConverter {
+public class Sql4LuceneConverter implements ISql4NosqlConverter {
 
 	private SimpleSearcher searcher;
 	

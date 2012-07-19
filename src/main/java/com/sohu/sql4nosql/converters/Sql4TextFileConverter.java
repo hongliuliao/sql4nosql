@@ -16,7 +16,7 @@ import com.sohu.sql4nosql.utils.TextFileUtils.MultiLineHandler;
  *
  * 2012-2-23 обнГ09:22:22
  */
-public class Sql4TextFileConverter implements ISql4nosqlConverter{
+public class Sql4TextFileConverter implements ISql4NosqlConverter{
 	/**
 	 * The fieldName which used in sql and the sort order must match the order which split by splitChar
 	 */

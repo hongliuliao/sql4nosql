@@ -21,7 +21,7 @@ import com.sohu.sql4nosql.utils.AntlrUtils;
  *
  * CreateDate:2012-7-18 обнГ08:23:59
  */
-public class Sql4MongoConverter implements ISql4nosqlConverter {
+public class Sql4MongoConverter implements ISql4NosqlConverter {
 	private DB db;
 	
 	public Sql4MongoConverter(String host, int port, String dbName) {
