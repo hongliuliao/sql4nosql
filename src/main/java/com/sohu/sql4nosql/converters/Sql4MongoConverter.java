@@ -21,10 +21,10 @@ import com.sohu.sql4nosql.utils.AntlrUtils;
  *
  * CreateDate:2012-7-18 обнГ08:23:59
  */
-public class Sql4mongoConverter implements ISql4nosqlConverter {
+public class Sql4MongoConverter implements ISql4nosqlConverter {
 	private DB db;
 	
-	public Sql4mongoConverter(String host, int port, String dbName) {
+	public Sql4MongoConverter(String host, int port, String dbName) {
 		try {
 			Mongo mongo = new Mongo(host, port);
 			db = mongo.getDB(dbName);
