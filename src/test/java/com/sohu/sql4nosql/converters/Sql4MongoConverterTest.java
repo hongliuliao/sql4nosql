@@ -14,7 +14,7 @@ import com.sohu.sql4nosql.converters.Sql4MongoConverter;
  * CreateDate:2012-7-19 обнГ01:36:41
  */
 public class Sql4MongoConverterTest {
-	Sql4MongoConverter sql4mongo = new Sql4MongoConverter("localhost", 27017, "test");
+	Sql4MongoConverter sql4mongo = new Sql4MongoConverter("localhost", 27017, "tb_users");
 	/**
 	 * Test method for {@link com.sohu.sql4nosql.converters.Sql4MongoConverter#queryForList(java.lang.String, java.lang.Object[])}.
 	 */
