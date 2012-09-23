@@ -3,6 +3,8 @@
  */
 package com.sohu.sql4nosql.converters;
 
+import static org.junit.Assert.*;
+
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -25,8 +27,9 @@ public class Sql4TextFileConverterTest {
 		converter = new Sql4TextFileConverter(new String[]{"id","userName","birthday"},testFilePath);
 	}
 	@Test
-	public void testQueryForList() throws UnsupportedEncodingException{
+	public void d() throws UnsupportedEncodingException{
 		List<String> result = this.converter.queryForList("select id,userName from Users where id=2");
+		assertTrue(result.size() == 1);
 		System.out.println(result);
 	}
 }
