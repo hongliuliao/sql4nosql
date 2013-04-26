@@ -16,7 +16,7 @@ import com.sohu.sql4nosql.converters.Sql4TextFileConverter;
 /**
  * @author liaohongliu
  *
- * 2012-2-23 ÏÂÎç10:27:31
+ * 2012-2-23 ä¸‹åˆ10:27:31
  */
 public class Sql4TextFileConverterTest {
 	Sql4TextFileConverter converter ;

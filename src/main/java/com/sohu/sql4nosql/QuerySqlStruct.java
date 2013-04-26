@@ -13,29 +13,29 @@ import java.util.List;
  */
 public class QuerySqlStruct {
 	/**
-	 * ÊÇ·ñÊÇ²éÑ¯ËùÓĞ
+	 * æ˜¯å¦æ˜¯æŸ¥è¯¢æ‰€æœ‰
 	 */
-	private boolean selectAll;
+	public boolean selectAll;
 	/**
-	 * ²éÑ¯µÄ×Ö¶Î
+	 * æŸ¥è¯¢çš„å­—æ®µ
 	 */
-	private List<String> selectFields;
+	public List<String> selectFields;
 	/**
 	 * filt field name
 	 */
-	private String whereFieldName;
+	public String whereFieldName;
 	/**
 	 * the option char on field ,for example > < = etc.
 	 */
-	private String option;
+	public String option;
 	/**
 	 * the filt value
 	 */
-	private String fieldValue;
+	public String fieldValue;
 	/**
 	 * Select table's name
 	 */
-	private String tableName;
+	public String tableName;
 	
 	public String getFieldValue() {
 		return fieldValue;
@@ -65,7 +65,7 @@ public class QuerySqlStruct {
 		if(this.selectFields == null){
 			return null;
 		}
-		List<String> fields = new ArrayList<String>();//±£´æÈ¥³ı¿Õ¸ñÖ®ºóµÄ×Ö¶ÎÃû
+		List<String> fields = new ArrayList<String>();//ä¿å­˜å»é™¤ç©ºæ ¼ä¹‹åçš„å­—æ®µå
 		for(String fieldName : selectFields){
 			fields.add(fieldName.trim());
 		}

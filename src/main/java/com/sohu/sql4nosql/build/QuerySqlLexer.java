@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g 2012-07-19 13:39:44
+// $ANTLR 3.4 /E:/workspace/sql4nosql/target/classes/QuerySql.g 2013-04-26 18:22:13
 
 package com.sohu.sql4nosql.build;
 
@@ -33,17 +33,17 @@ public class QuerySqlLexer extends Lexer {
     public QuerySqlLexer(CharStream input, RecognizerSharedState state) {
         super(input,state);
     }
-    public String getGrammarFileName() { return "/C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g"; }
+    public String getGrammarFileName() { return "/E:/workspace/sql4nosql/target/classes/QuerySql.g"; }
 
     // $ANTLR start "SELECT"
     public final void mSELECT() throws RecognitionException {
         try {
             int _type = SELECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:45:7: ( ( 'select' | 'SELECT' ) ( WS )+ )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:45:8: ( 'select' | 'SELECT' ) ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:7: ( ( 'select' | 'SELECT' ) ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:8: ( 'select' | 'SELECT' ) ( WS )+
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:45:8: ( 'select' | 'SELECT' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:8: ( 'select' | 'SELECT' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -62,7 +62,7 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:45:9: 'select'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:9: 'select'
                     {
                     match("select"); 
 
@@ -71,7 +71,7 @@ public class QuerySqlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:45:18: 'SELECT'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:18: 'SELECT'
                     {
                     match("SELECT"); 
 
@@ -83,7 +83,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:45:27: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:27: ( WS )+
             int cnt2=0;
             loop2:
             do {
@@ -97,7 +97,7 @@ public class QuerySqlLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -138,10 +138,10 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = SELECTFIELD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:12: ( ( '*' | NAME ( ',' NAME )* ) ( WS )+ )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:13: ( '*' | NAME ( ',' NAME )* ) ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:12: ( ( '*' | NAME ( ',' NAME )* ) ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:13: ( '*' | NAME ( ',' NAME )* ) ( WS )+
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:13: ( '*' | NAME ( ',' NAME )* )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:13: ( '*' | NAME ( ',' NAME )* )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -160,19 +160,19 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:14: '*'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:14: '*'
                     {
                     match('*'); 
 
                     }
                     break;
                 case 2 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:18: NAME ( ',' NAME )*
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:18: NAME ( ',' NAME )*
                     {
                     mNAME(); 
 
 
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:23: ( ',' NAME )*
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:23: ( ',' NAME )*
                     loop3:
                     do {
                         int alt3=2;
@@ -185,7 +185,7 @@ public class QuerySqlLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:24: ',' NAME
+                    	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:24: ',' NAME
                     	    {
                     	    match(','); 
 
@@ -207,7 +207,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:46:36: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:36: ( WS )+
             int cnt5=0;
             loop5:
             do {
@@ -221,7 +221,7 @@ public class QuerySqlLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -260,10 +260,10 @@ public class QuerySqlLexer extends Lexer {
     // $ANTLR start "NAME"
     public final void mNAME() throws RecognitionException {
         try {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:14: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:14: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:47:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
             int cnt6=0;
             loop6:
             do {
@@ -277,7 +277,7 @@ public class QuerySqlLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
             	    if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
             	        input.consume();
@@ -317,10 +317,10 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = FROMSTATEMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:48:15: ( ( 'from' | 'FROM' ) ( WS )+ NAME )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:48:16: ( 'from' | 'FROM' ) ( WS )+ NAME
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:15: ( ( 'from' | 'FROM' ) ( WS )+ NAME )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:16: ( 'from' | 'FROM' ) ( WS )+ NAME
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:48:16: ( 'from' | 'FROM' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:16: ( 'from' | 'FROM' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -339,7 +339,7 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:48:17: 'from'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:17: 'from'
                     {
                     match("from"); 
 
@@ -348,7 +348,7 @@ public class QuerySqlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:48:24: 'FROM'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:24: 'FROM'
                     {
                     match("FROM"); 
 
@@ -360,7 +360,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:48:32: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:32: ( WS )+
             int cnt8=0;
             loop8:
             do {
@@ -374,7 +374,7 @@ public class QuerySqlLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -418,10 +418,10 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = WHERESATEMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:15: ( ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ NAME )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:17: ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ NAME
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:15: ( ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ NAME )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:17: ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ NAME
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:17: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:17: ( WS )+
             int cnt9=0;
             loop9:
             do {
@@ -435,7 +435,7 @@ public class QuerySqlLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -460,7 +460,7 @@ public class QuerySqlLexer extends Lexer {
             } while (true);
 
 
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:21: ( 'where' | 'WHERE' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:21: ( 'where' | 'WHERE' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -479,7 +479,7 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:22: 'where'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:22: 'where'
                     {
                     match("where"); 
 
@@ -488,7 +488,7 @@ public class QuerySqlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:30: 'WHERE'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:30: 'WHERE'
                     {
                     match("WHERE"); 
 
@@ -500,7 +500,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:49:39: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:39: ( WS )+
             int cnt11=0;
             loop11:
             do {
@@ -514,7 +514,7 @@ public class QuerySqlLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -558,10 +558,10 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = OPTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:50:8: ( ( WS )? ( '>' | '<' | '=' ) ( WS )? )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:50:10: ( WS )? ( '>' | '<' | '=' ) ( WS )?
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:8: ( ( WS )? ( '>' | '<' | '=' ) ( WS )? )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:10: ( WS )? ( '>' | '<' | '=' ) ( WS )?
             {
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:50:10: ( WS )?
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:10: ( WS )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -570,7 +570,7 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
                     {
                     if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                         input.consume();
@@ -598,7 +598,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:50:28: ( WS )?
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:28: ( WS )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -607,7 +607,7 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
                     {
                     if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                         input.consume();
@@ -641,7 +641,7 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = FIELDVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:52:2: ( ( '\\'' NAME '\\'' ) | '0' .. '9' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:2: ( ( '\\'' NAME '\\'' ) | '0' .. '9' )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -660,10 +660,10 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:52:4: ( '\\'' NAME '\\'' )
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:4: ( '\\'' NAME '\\'' )
                     {
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:52:4: ( '\\'' NAME '\\'' )
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:52:5: '\\'' NAME '\\''
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:4: ( '\\'' NAME '\\'' )
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:5: '\\'' NAME '\\''
                     {
                     match('\''); 
 
@@ -678,7 +678,7 @@ public class QuerySqlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:52:19: '0' .. '9'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:19: '0' .. '9'
                     {
                     matchRange('0','9'); 
 
@@ -700,8 +700,8 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:53:4: ( ( ' ' | '\\t' | '\\n' | '\\r' ) )
-            // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:4: ( ( ' ' | '\\t' | '\\n' | '\\r' ) )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             {
             if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                 input.consume();
@@ -725,12 +725,12 @@ public class QuerySqlLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:8: ( SELECT | SELECTFIELD | FROMSTATEMENT | WHERESATEMENT | OPTION | FIELDVALUE | WS )
+        // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:8: ( SELECT | SELECTFIELD | FROMSTATEMENT | WHERESATEMENT | OPTION | FIELDVALUE | WS )
         int alt15=7;
         alt15 = dfa15.predict(input);
         switch (alt15) {
             case 1 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:10: SELECT
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:10: SELECT
                 {
                 mSELECT(); 
 
@@ -738,7 +738,7 @@ public class QuerySqlLexer extends Lexer {
                 }
                 break;
             case 2 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:17: SELECTFIELD
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:17: SELECTFIELD
                 {
                 mSELECTFIELD(); 
 
@@ -746,7 +746,7 @@ public class QuerySqlLexer extends Lexer {
                 }
                 break;
             case 3 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:29: FROMSTATEMENT
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:29: FROMSTATEMENT
                 {
                 mFROMSTATEMENT(); 
 
@@ -754,7 +754,7 @@ public class QuerySqlLexer extends Lexer {
                 }
                 break;
             case 4 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:43: WHERESATEMENT
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:43: WHERESATEMENT
                 {
                 mWHERESATEMENT(); 
 
@@ -762,7 +762,7 @@ public class QuerySqlLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:57: OPTION
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:57: OPTION
                 {
                 mOPTION(); 
 
@@ -770,7 +770,7 @@ public class QuerySqlLexer extends Lexer {
                 }
                 break;
             case 6 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:64: FIELDVALUE
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:64: FIELDVALUE
                 {
                 mFIELDVALUE(); 
 
@@ -778,7 +778,7 @@ public class QuerySqlLexer extends Lexer {
                 }
                 break;
             case 7 :
-                // /C:/Users/Default/git/sql4nosql/target/classes/QuerySql.g:1:75: WS
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:75: WS
                 {
                 mWS(); 
 

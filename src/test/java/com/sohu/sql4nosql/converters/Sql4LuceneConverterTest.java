@@ -9,7 +9,7 @@ import org.junit.Test;
  * 
  * @author hongliuliao
  *
- * CreateDate:2012-7-19 ÏÂÎç06:00:52
+ * CreateDate:2012-7-19 ä¸‹åˆ06:00:52
  */
 public class Sql4LuceneConverterTest {
 

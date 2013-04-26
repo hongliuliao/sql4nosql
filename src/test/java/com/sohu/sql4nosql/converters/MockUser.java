@@ -11,11 +11,11 @@ import java.util.Date;
  */
 public class MockUser {
 	/**
-	 * Î¨Ò»±êÊ¾
+	 * å”¯ä¸€æ ‡ç¤º
 	 */
 	private Integer id;
 	/**
-	 * ÓÃ»§Ãû
+	 * ç”¨æˆ·å
 	 */
 	private String name;
 	private Date birthday;

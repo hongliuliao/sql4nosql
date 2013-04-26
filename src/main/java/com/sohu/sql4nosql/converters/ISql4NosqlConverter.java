@@ -9,7 +9,7 @@ import java.util.List;
  * Query the records by sql
  * @author hongliuliao
  *
- * CreateDate:2012-7-5 ÏÂÎç06:17:15
+ * CreateDate:2012-7-5 ä¸‹åˆ06:17:15
  */
 public interface ISql4NosqlConverter {
 	/**

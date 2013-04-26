@@ -35,7 +35,7 @@ public class Sql4PojoListConverter implements ISql4NosqlConverter{
 		}
 		try {
 			QuerySqlStruct sqlStruct = AntlrUtils.buildSqlStruct(sql);
-			//ÏÈ¹ıÂË
+			//å…ˆè¿‡æ»¤
 			pojoList = this.filterPojo(pojoList, sqlStruct);
 			if(sqlStruct.isSelectAll()){
 				for (Object pojo : pojoList) {
@@ -59,13 +59,13 @@ public class Sql4PojoListConverter implements ISql4NosqlConverter{
 		return result;
 	}
 	private <T> List<T> filterPojo(List<T> pojoList,QuerySqlStruct querySqlStruct){
-		//Èç¹ûÃ»ÓĞwhereÓï¾ä¾ÍÖ±½Ó°ÑÔ­À´µÄ·µ»Ø
+		//å¦‚æœæ²¡æœ‰whereè¯­å¥å°±ç›´æ¥æŠŠåŸæ¥çš„è¿”å›
 		if(!CommonUtils.isValidString(querySqlStruct.getWhereFieldName())){
 			return pojoList;
 		}
 		List<T> filteredPojos = new ArrayList<T>();
 		String queryWhereFieldValue = querySqlStruct.getFieldValue();
-		if(queryWhereFieldValue.indexOf("'") != -1){//Èç¹û²éÑ¯µÄÊÇ×Ö·û´®ÀàĞÍµÄÒªÈ¥µôÁ½¸öÒıºÅ
+		if(queryWhereFieldValue.indexOf("'") != -1){//å¦‚æœæŸ¥è¯¢çš„æ˜¯å­—ç¬¦ä¸²ç±»å‹çš„è¦å»æ‰ä¸¤ä¸ªå¼•å·
 			queryWhereFieldValue = queryWhereFieldValue.replaceAll("'", "");
 		}
 		for (T pojo : pojoList) {

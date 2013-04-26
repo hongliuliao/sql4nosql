@@ -14,7 +14,7 @@ import com.sohu.sql4nosql.utils.TextFileUtils.MultiLineHandler;
 /**
  * @author liaohongliu
  *
- * 2012-2-23 ÏÂÎç09:22:22
+ * 2012-2-23 ä¸‹åˆ09:22:22
  */
 public class Sql4TextFileConverter implements ISql4NosqlConverter{
 	/**
@@ -65,7 +65,7 @@ public class Sql4TextFileConverter implements ISql4NosqlConverter{
 						String[] fieldValues = line.split(splitChar);
 						String fieldValue = fieldValues[index];
 						String queryWhereFieldValue = sqlStruct.getFieldValue();
-						if(queryWhereFieldValue.indexOf("'") != -1){//Èç¹û²éÑ¯µÄÊÇ×Ö·û´®ÀàĞÍµÄÒªÈ¥µôÁ½¸öÒıºÅ
+						if(queryWhereFieldValue.indexOf("'") != -1){//å¦‚æœæŸ¥è¯¢çš„æ˜¯å­—ç¬¦ä¸²ç±»å‹çš„è¦å»æ‰ä¸¤ä¸ªå¼•å·
 							queryWhereFieldValue = queryWhereFieldValue.replaceAll("'", "");
 						}
 						if(queryWhereFieldValue.equals(fieldValue)){
@@ -99,11 +99,11 @@ public class Sql4TextFileConverter implements ISql4NosqlConverter{
 		return result;
 	}
 	/**
-	 * ÔÚÎÄ±¾ÖĞÖ´ĞĞsqlÓï¾ä
-	 * @param sql ÒªÖ´ĞĞµÄsqlÓï¾ä
-	 * @param filePath ÎÄ¼şÂ·¾¶
-	 * @param fieldNames ÎÄ¼şÖĞÃ¿¸ö·Ö¸ô·û¸ô¿ªºó¶ÔÓ¦µÄ×Ö¶ÎÃû
-	 * @return ²éÑ¯µ½µÄ¼ÇÂ¼
+	 * åœ¨æ–‡æœ¬ä¸­æ‰§è¡Œsqlè¯­å¥
+	 * @param sql è¦æ‰§è¡Œçš„sqlè¯­å¥
+	 * @param filePath æ–‡ä»¶è·¯å¾„
+	 * @param fieldNames æ–‡ä»¶ä¸­æ¯ä¸ªåˆ†éš”ç¬¦éš”å¼€åå¯¹åº”çš„å­—æ®µå
+	 * @return æŸ¥è¯¢åˆ°çš„è®°å½•
 	 */
 	public List<String> queryForTextFile(final String sql,String filePath,String[] fieldNames){
 		return this.queryForList(sql);

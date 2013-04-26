@@ -19,7 +19,7 @@ import com.sohu.sql4nosql.utils.AntlrUtils;
  * 
  * @author hongliuliao
  *
- * CreateDate:2012-7-18 ÏÂÎç08:23:59
+ * CreateDate:2012-7-18 ä¸‹åˆ08:23:59
  */
 public class Sql4MongoConverter implements ISql4NosqlConverter {
 	private DB db;

@@ -2,43 +2,37 @@ grammar QuerySql;
 
 @header{
 package com.sohu.sql4nosql.build;
-import java.util.HashMap;
+
+import java.util.Arrays;
+import com.sohu.sql4nosql.QuerySqlStruct;
 }
 @lexer::header{
 package com.sohu.sql4nosql.build;
 }
 
-querySql returns [HashMap result]
-	:	selectFromStatement (whereStatement)?{
-		result = $selectFromStatement.result;
-		if($whereStatement.result != null){
-			result.putAll($whereStatement.result);
-		}
+querySql returns [QuerySqlStruct result = new QuerySqlStruct()]
+	:	selectFromStatement[result] (whereStatement[result])?{
 	};
 
-selectFromStatement returns [HashMap result]
-	:	selectStatement fromStatement{
-		result = $selectStatement.result;
-		result.putAll($fromStatement.result);
+selectFromStatement [QuerySqlStruct result]
+	:	selectStatement[result] fromStatement[result]{
 	};
-selectStatement returns [HashMap result]
+selectStatement [QuerySqlStruct result]
 	:	SELECT SELECTFIELD {
-		$result = new HashMap();
-		$result.put("selectFieldName",$SELECTFIELD.text);
+		String selectFieldNames = $SELECTFIELD.text;
+		$result.selectFields = Arrays.asList(selectFieldNames.split(","));
 	};
-fromStatement returns [HashMap result]
+fromStatement [QuerySqlStruct result]
 	:	FROMSTATEMENT{
-		$result = new HashMap();  
 		String[] fromStatements = $FROMSTATEMENT.text.split(" ");
-		$result.put("tableName",fromStatements[fromStatements.length-1]);
+		$result.tableName = fromStatements[fromStatements.length-1];
 	};
-whereStatement returns [HashMap result]
+whereStatement [QuerySqlStruct result]
  	:	WHERESATEMENT OPTION FIELDVALUE{
- 		$result = new HashMap();
  		String[] whereStatements = $WHERESATEMENT.text.split(" ");
- 		$result.put("whereFieldName",whereStatements[whereStatements.length-1]);
- 		$result.put("option",$OPTION.text);
- 		$result.put("fieldValue",$FIELDVALUE.text);
+ 		$result.whereFieldName = whereStatements[whereStatements.length-1];
+ 		$result.option = $OPTION.text;
+ 		$result.fieldValue = $FIELDVALUE.text;
  	};
 	
 

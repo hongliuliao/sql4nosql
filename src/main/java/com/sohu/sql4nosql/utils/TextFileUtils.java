@@ -6,7 +6,7 @@ package com.sohu.sql4nosql.utils;
 /**
  * @author liaohongliu
  *
- * 2012-2-23 ÏÂÎç09:33:02
+ * 2012-2-23 ä¸‹åˆ09:33:02
  */
 /**
  * $Id: TextFileUtils.java 17852 2012-02-15 10:20:35Z hongliuliao $
@@ -25,13 +25,13 @@ public class TextFileUtils {
 	
 	private final static Log log = LogFactory.getLog(TextFileUtils.class);
 	/**
-	 * µ÷ÓÃÅúÁ¿´¦Àí·½·¨µÄÊ±ºòÊ¹ÓÃ,±íÊ¾µÄÊÇÒ»´Î×î¶à·µ»ØµÄ¼ÇÂ¼Êı
+	 * è°ƒç”¨æ‰¹é‡å¤„ç†æ–¹æ³•çš„æ—¶å€™ä½¿ç”¨,è¡¨ç¤ºçš„æ˜¯ä¸€æ¬¡æœ€å¤šè¿”å›çš„è®°å½•æ•°
 	 */
 	private static int READ_BATCH_SIZE = 10000;
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şÖĞµÄÎÄ±¾ĞÅÏ¢
-	 * @param filePath ÎÄ¼şÂ·¾¶
-	 * @param handler ¶ÔÃ¿ĞĞÎÄ±¾½øĞĞµÄ´¦Àí
+	 * è¯»å–æ–‡ä»¶ä¸­çš„æ–‡æœ¬ä¿¡æ¯
+	 * @param filePath æ–‡ä»¶è·¯å¾„
+	 * @param handler å¯¹æ¯è¡Œæ–‡æœ¬è¿›è¡Œçš„å¤„ç†
 	 */
 	public static void readFileText(String filePath,String fileEncode,SingleLineHandler handler) {
 		BufferedReader reader = null;
@@ -54,10 +54,10 @@ public class TextFileUtils {
 		}
 	}
 	/**
-	 * ÅúÁ¿¶ÁÈ¡ÎÄ±¾ÎÄ¼ş
-	 * @param filePath ÎÄ¼şÂ·¾¶
-	 * @param batchSize Ò»´ÎÅúÁ¿µÄ´óĞ¡
-	 * @param handler ÏàÓ¦´¦ÀíÆ÷
+	 * æ‰¹é‡è¯»å–æ–‡æœ¬æ–‡ä»¶
+	 * @param filePath æ–‡ä»¶è·¯å¾„
+	 * @param batchSize ä¸€æ¬¡æ‰¹é‡çš„å¤§å°
+	 * @param handler ç›¸åº”å¤„ç†å™¨
 	 */
 	public static void readFileTextBatch(String filePath,String fileEncode,final int batchSize,final MultiLineHandler handler) {
 		final List<String> lines = new ArrayList<String>();
@@ -73,40 +73,40 @@ public class TextFileUtils {
 				}
 			}
 		});
-		//×îºó»¹ÊÇĞèÒª´¦ÀíµÎ
+		//æœ€åè¿˜æ˜¯éœ€è¦å¤„ç†æ»´
 		if(lines.size() != 0) {
 			handler.handleMultiLines(lines);
 		}
 	}
 	/**
-	 * ÅúÁ¿¶ÁÈ¡ÎÄ±¾ÎÄ¼ş
-	 * @param filePath ÎÄ¼şÂ·¾¶
-	 * @param handler ÏàÓ¦´¦ÀíÆ÷
+	 * æ‰¹é‡è¯»å–æ–‡æœ¬æ–‡ä»¶
+	 * @param filePath æ–‡ä»¶è·¯å¾„
+	 * @param handler ç›¸åº”å¤„ç†å™¨
 	 */
 	public static void readFileTextBatch(String filePath,String fileEncode,final MultiLineHandler handler) {
 		readFileTextBatch(filePath, fileEncode, READ_BATCH_SIZE, handler);
 	}
 	/**
-	 * Ã¿ÌõÎÄ±¾¼ÇÂ¼µÄ´¦ÀíÆ÷
+	 * æ¯æ¡æ–‡æœ¬è®°å½•çš„å¤„ç†å™¨
 	 * 
-	 * CreateDate:2012-2-10 ÏÂÎç05:16:57
+	 * CreateDate:2012-2-10 ä¸‹åˆ05:16:57
 	 */
 	public interface SingleLineHandler{
 		/**
-		 * ´¦Àíµ¥ĞĞÎÄ±¾
-		 * @param line µ¥ĞĞÎÄ±¾
+		 * å¤„ç†å•è¡Œæ–‡æœ¬
+		 * @param line å•è¡Œæ–‡æœ¬
 		 */
 		void handleLine(String line);
 	}
 	/**
-	 * ¶àÌõÎÄ±¾¼ÇÂ¼µÄ´¦ÀíÆ÷
+	 * å¤šæ¡æ–‡æœ¬è®°å½•çš„å¤„ç†å™¨
 	 * 
-	 * CreateDate:2012-2-10 ÏÂÎç05:32:43
+	 * CreateDate:2012-2-10 ä¸‹åˆ05:32:43
 	 */
 	public interface MultiLineHandler {
 		/**
-		 * ´¦Àí¶àĞĞÎÄ±¾
-		 * @param lines ¶àĞĞÎÄ±¾
+		 * å¤„ç†å¤šè¡Œæ–‡æœ¬
+		 * @param lines å¤šè¡Œæ–‡æœ¬
 		 */
 		void handleMultiLines(List<String> lines);
 	}

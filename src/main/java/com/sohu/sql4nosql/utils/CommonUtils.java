@@ -4,15 +4,9 @@
 package com.sohu.sql4nosql.utils;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
-
-import com.sohu.sql4nosql.QuerySqlStruct;
-import com.sohu.sql4nosql.Sql4nosqlConstants;
-import com.sohu.sql4nosql.SqlConstants;
 
 
 
@@ -47,17 +41,17 @@ public class CommonUtils {
 	
 
 	/**
-	 * ÅĞ¶Ï×Ö·û´®µÄÓĞĞ§ĞÔ
-	 * @param str ÒªÅĞ¶ÏµÄ×Ö·û´®
-	 * @return ÊÇ·ñÓĞĞ§,true:ÓĞĞ§
+	 * åˆ¤æ–­å­—ç¬¦ä¸²çš„æœ‰æ•ˆæ€§
+	 * @param str è¦åˆ¤æ–­çš„å­—ç¬¦ä¸²
+	 * @return æ˜¯å¦æœ‰æ•ˆ,true:æœ‰æ•ˆ
 	 */
 	public static boolean isValidString(String str){
 		return str!=null&&str.trim().length()>0;
 	}
 	/**
-	 * µÃµ½¶à¸öĞ¡Êıµã¸ñÊ½µÄ×Ö·û´®µÄ×î¿ªÊ¼Ò»¸ö
-	 * @param name ×Ö·û´®
-	 * @return ½ØÈ¡ºóµÄ×Ö·û´®
+	 * å¾—åˆ°å¤šä¸ªå°æ•°ç‚¹æ ¼å¼çš„å­—ç¬¦ä¸²çš„æœ€å¼€å§‹ä¸€ä¸ª
+	 * @param name å­—ç¬¦ä¸²
+	 * @return æˆªå–åçš„å­—ç¬¦ä¸²
 	 */
 	public static String getFirstName(String name){
 		if(name.indexOf(".")!=-1){
@@ -68,10 +62,10 @@ public class CommonUtils {
 		}
 	}
 	/**
-	 * ¸ù¾İ×Ö¶ÎÃûÀ´»ñµÃ×Ö¶Î,Ö§³ÖÁ½¼¶
-	 * @param clazz Ö¸¶¨Òª»ñµÃ×Ö¶ÎµÄÀà
-	 * @param name ×Ö¶ÎÃû,¶à¼¶ÓÃµãºÅ¸ô¿ª
-	 * @return ÕÒµ½µÄ×Ö¶Î,Èç¹ûÃ»ÓĞ¾ÍÎª¿Õ
+	 * æ ¹æ®å­—æ®µåæ¥è·å¾—å­—æ®µ,æ”¯æŒä¸¤çº§
+	 * @param clazz æŒ‡å®šè¦è·å¾—å­—æ®µçš„ç±»
+	 * @param name å­—æ®µå,å¤šçº§ç”¨ç‚¹å·éš”å¼€
+	 * @return æ‰¾åˆ°çš„å­—æ®µ,å¦‚æœæ²¡æœ‰å°±ä¸ºç©º
 	 */
 	public static Field getFieldByString(Class<?> clazz,String name){
 		try {
@@ -86,25 +80,12 @@ public class CommonUtils {
 		}
 	}
 	/**
-	 * ÈÃÊ××ÖÄ¸´óĞ´
-	 * @param str Òª´óĞ´µÄµ¥´Ê
-	 * @return Ê××ÖÄ¸´óĞ´ºóµÄµ¥´Ê
+	 * è®©é¦–å­—æ¯å¤§å†™
+	 * @param str è¦å¤§å†™çš„å•è¯
+	 * @return é¦–å­—æ¯å¤§å†™åçš„å•è¯
 	 */
 	public static String getFirstUpper(String str){
 		return str.substring(0, 1).toUpperCase()+str.substring(1);
 	}
-	public static QuerySqlStruct buildSqlStruct(Map<String,String> sqlMap){
-		QuerySqlStruct sqlStruct = new QuerySqlStruct();
-		String selectFieldNames = sqlMap.get(Sql4nosqlConstants.SELECTFIELDNAME);
-		if(SqlConstants.SIGN_OF_SELECT_ALL.equals(selectFieldNames.trim())){
-			sqlStruct.setSelectAll(true);
-		}else{
-			sqlStruct.setSelectFields(Arrays.asList(selectFieldNames.split(",")));
-		}
-		sqlStruct.setWhereFieldName(sqlMap.get(Sql4nosqlConstants.WHEREFIELDNAME));
-		sqlStruct.setOption(sqlMap.get(Sql4nosqlConstants.OPTION));
-		sqlStruct.setFieldValue(sqlMap.get(Sql4nosqlConstants.FIELDVALUE));
-		sqlStruct.setTableName(sqlMap.get(Sql4nosqlConstants.TABLENAME));
-		return sqlStruct;
-	}
+	
 }

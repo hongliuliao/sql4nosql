@@ -26,7 +26,7 @@ import com.sohu.sql4nosql.utils.Page;
  * Use sql query from lucene index
  * @author hongliuliao
  *
- * CreateDate:2012-7-19 ÏÂÎç03:38:45
+ * CreateDate:2012-7-19 ä¸‹åˆ03:38:45
  */
 public class Sql4LuceneConverter implements ISql4NosqlConverter {
 
@@ -46,7 +46,7 @@ public class Sql4LuceneConverter implements ISql4NosqlConverter {
 
 }
 class SimpleSearcher {
-	/**Ë÷ÒıÄ¿Â¼Â·¾¶*/
+	/**ç´¢å¼•ç›®å½•è·¯å¾„*/
 	private String indexPath;
 	
 	public SimpleSearcher(String indexPath) {
@@ -54,33 +54,33 @@ class SimpleSearcher {
 		this.indexPath = indexPath;
 	}
 	/**
-	 * ²éÑ¯´Ó0µ½limitµÄÎÄµµ¶ÔÏó
-	 * @param query ²éÑ¯¶ÔÏó
-	 * @param limit ²éÑ¯×î´óÊı
-	 * @return ÎÄµµ¶ÔÏó¼¯ºÏ
+	 * æŸ¥è¯¢ä»0åˆ°limitçš„æ–‡æ¡£å¯¹è±¡
+	 * @param query æŸ¥è¯¢å¯¹è±¡
+	 * @param limit æŸ¥è¯¢æœ€å¤§æ•°
+	 * @return æ–‡æ¡£å¯¹è±¡é›†åˆ
 	 * @throws Exception
 	 */
 	public List<Document> search(Query query,int limit) {
 		return this.search(query, 0, limit);
 	}
 	/**
-	 * ²éÑ¯´Óstartµ½limitµÄÎÄµµ¶ÔÏó
-	 * @param query ²éÑ¯¶ÔÏó
-	 * @param start ²éÑ¯¿ªÊ¼Êı
-	 * @param limit ²éÑ¯×î´óÊı
-	 * @return ÎÄµµ¶ÔÏó¼¯ºÏ
+	 * æŸ¥è¯¢ä»startåˆ°limitçš„æ–‡æ¡£å¯¹è±¡
+	 * @param query æŸ¥è¯¢å¯¹è±¡
+	 * @param start æŸ¥è¯¢å¼€å§‹æ•°
+	 * @param limit æŸ¥è¯¢æœ€å¤§æ•°
+	 * @return æ–‡æ¡£å¯¹è±¡é›†åˆ
 	 * @throws Exception
 	 */
 	public List<Document> search(Query query,int start,int limit) {
 		return this.search(query, start, limit, null);
 	}
 	/**
-	 * ²éÑ¯´Óstartµ½limitµÄÎÄµµ¶ÔÏó
-	 * @param query ²éÑ¯¶ÔÏó
-	 * @param start ²éÑ¯¿ªÊ¼Êı
-	 * @param limit ²éÑ¯×î´óÊı
-	 * @param sort ÅÅĞò¶ÔÏó
-	 * @return ÎÄµµ¶ÔÏó¼¯ºÏ
+	 * æŸ¥è¯¢ä»startåˆ°limitçš„æ–‡æ¡£å¯¹è±¡
+	 * @param query æŸ¥è¯¢å¯¹è±¡
+	 * @param start æŸ¥è¯¢å¼€å§‹æ•°
+	 * @param limit æŸ¥è¯¢æœ€å¤§æ•°
+	 * @param sort æ’åºå¯¹è±¡
+	 * @return æ–‡æ¡£å¯¹è±¡é›†åˆ
 	 * @throws Exception
 	 */
 	public List<Document> search(Query query,int start,int limit,Sort sort) {
