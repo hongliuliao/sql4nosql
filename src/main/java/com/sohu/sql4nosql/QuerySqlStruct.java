@@ -73,14 +73,7 @@ public class QuerySqlStruct {
 		this.selectAll = selectAll;
 	}
 	public List<String> getSelectFields() {
-		if(this.selectFields == null){
-			return null;
-		}
-		List<String> fields = new ArrayList<String>();//保存去除空格之后的字段名
-		for(String fieldName : selectFields){
-			fields.add(fieldName.trim());
-		}
-		return fields;
+		return selectFields;
 	}
 	public void setSelectFields(List<String> selectFields) {
 		this.selectFields = selectFields;
