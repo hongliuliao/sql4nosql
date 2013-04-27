@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /E:/workspace/sql4nosql/target/classes/QuerySql.g 2013-04-26 18:22:13
+// $ANTLR 3.4 /E:/workspace/sql4nosql/target/classes/QuerySql.g 2013-04-27 16:57:18
 
 package com.sohu.sql4nosql.build;
 
@@ -11,14 +11,19 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class QuerySqlLexer extends Lexer {
     public static final int EOF=-1;
+    public static final int T__15=15;
+    public static final int T__16=16;
     public static final int FIELDVALUE=4;
-    public static final int FROMSTATEMENT=5;
-    public static final int NAME=6;
-    public static final int OPTION=7;
-    public static final int SELECT=8;
-    public static final int SELECTFIELD=9;
-    public static final int WHERESATEMENT=10;
-    public static final int WS=11;
+    public static final int FROM=5;
+    public static final int INT=6;
+    public static final int LIMIT=7;
+    public static final int NAME=8;
+    public static final int OFFSET=9;
+    public static final int OPTION=10;
+    public static final int SELECT=11;
+    public static final int WHERE=12;
+    public static final int WHERESATEMENT=13;
+    public static final int WS=14;
 
     // delegates
     // delegators
@@ -35,15 +40,57 @@ public class QuerySqlLexer extends Lexer {
     }
     public String getGrammarFileName() { return "/E:/workspace/sql4nosql/target/classes/QuerySql.g"; }
 
+    // $ANTLR start "T__15"
+    public final void mT__15() throws RecognitionException {
+        try {
+            int _type = T__15;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:6:7: ( '*' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:6:9: '*'
+            {
+            match('*'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__15"
+
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
+        try {
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:7:7: ( ',' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:7:9: ','
+            {
+            match(','); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__16"
+
     // $ANTLR start "SELECT"
     public final void mSELECT() throws RecognitionException {
         try {
             int _type = SELECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:7: ( ( 'select' | 'SELECT' ) ( WS )+ )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:8: ( 'select' | 'SELECT' ) ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:7: ( ( 'select' | 'SELECT' ) ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:8: ( 'select' | 'SELECT' ) ( WS )+
             {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:8: ( 'select' | 'SELECT' )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:8: ( 'select' | 'SELECT' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -62,7 +109,7 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:9: 'select'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:9: 'select'
                     {
                     match("select"); 
 
@@ -71,7 +118,7 @@ public class QuerySqlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:18: 'SELECT'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:18: 'SELECT'
                     {
                     match("SELECT"); 
 
@@ -83,7 +130,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:39:27: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:27: ( WS )+
             int cnt2=0;
             loop2:
             do {
@@ -133,22 +180,61 @@ public class QuerySqlLexer extends Lexer {
     }
     // $ANTLR end "SELECT"
 
-    // $ANTLR start "SELECTFIELD"
-    public final void mSELECTFIELD() throws RecognitionException {
+    // $ANTLR start "LIMIT"
+    public final void mLIMIT() throws RecognitionException {
         try {
-            int _type = SELECTFIELD;
+            int _type = LIMIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:12: ( ( '*' | NAME ( ',' NAME )* ) ( WS )+ )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:13: ( '*' | NAME ( ',' NAME )* ) ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:7: ( ( WS )+ ( 'limit' | 'LIMIT' ) ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:10: ( WS )+ ( 'limit' | 'LIMIT' ) ( WS )+
             {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:13: ( '*' | NAME ( ',' NAME )* )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:10: ( WS )+
+            int cnt3=0;
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( ((LA3_0 >= '\t' && LA3_0 <= '\n')||LA3_0=='\r'||LA3_0==' ') ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
+            	    {
+            	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+            	        input.consume();
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt3 >= 1 ) break loop3;
+                        EarlyExitException eee =
+                            new EarlyExitException(3, input);
+                        throw eee;
+                }
+                cnt3++;
+            } while (true);
+
+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:14: ( 'limit' | 'LIMIT' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0=='*') ) {
+            if ( (LA4_0=='l') ) {
                 alt4=1;
             }
-            else if ( ((LA4_0 >= 'A' && LA4_0 <= 'Z')||LA4_0=='_'||(LA4_0 >= 'a' && LA4_0 <= 'z')) ) {
+            else if ( (LA4_0=='L') ) {
                 alt4=2;
             }
             else {
@@ -160,45 +246,19 @@ public class QuerySqlLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:14: '*'
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:15: 'limit'
                     {
-                    match('*'); 
+                    match("limit"); 
+
+
 
                     }
                     break;
                 case 2 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:18: NAME ( ',' NAME )*
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:23: 'LIMIT'
                     {
-                    mNAME(); 
+                    match("LIMIT"); 
 
-
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:23: ( ',' NAME )*
-                    loop3:
-                    do {
-                        int alt3=2;
-                        int LA3_0 = input.LA(1);
-
-                        if ( (LA3_0==',') ) {
-                            alt3=1;
-                        }
-
-
-                        switch (alt3) {
-                    	case 1 :
-                    	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:24: ',' NAME
-                    	    {
-                    	    match(','); 
-
-                    	    mNAME(); 
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop3;
-                        }
-                    } while (true);
 
 
                     }
@@ -207,7 +267,7 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:40:36: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:45:32: ( WS )+
             int cnt5=0;
             loop5:
             do {
@@ -255,31 +315,73 @@ public class QuerySqlLexer extends Lexer {
         	// do for sure before leaving
         }
     }
-    // $ANTLR end "SELECTFIELD"
+    // $ANTLR end "LIMIT"
 
-    // $ANTLR start "NAME"
-    public final void mNAME() throws RecognitionException {
+    // $ANTLR start "FROM"
+    public final void mFROM() throws RecognitionException {
         try {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:14: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            int _type = FROM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:6: ( ( 'from' | 'FROM' ) ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:8: ( 'from' | 'FROM' ) ( WS )+
             {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:15: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
-            int cnt6=0;
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:8: ( 'from' | 'FROM' )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0 >= 'A' && LA6_0 <= 'Z')||LA6_0=='_'||(LA6_0 >= 'a' && LA6_0 <= 'z')) ) {
-                    alt6=1;
+            if ( (LA6_0=='f') ) {
+                alt6=1;
+            }
+            else if ( (LA6_0=='F') ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+
+            }
+            switch (alt6) {
+                case 1 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:9: 'from'
+                    {
+                    match("from"); 
+
+
+
+                    }
+                    break;
+                case 2 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:16: 'FROM'
+                    {
+                    match("FROM"); 
+
+
+
+                    }
+                    break;
+
+            }
+
+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:24: ( WS )+
+            int cnt7=0;
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( ((LA7_0 >= '\t' && LA7_0 <= '\n')||LA7_0=='\r'||LA7_0==' ') ) {
+                    alt7=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
             	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
-            	    if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+            	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
             	    }
             	    else {
@@ -293,74 +395,35 @@ public class QuerySqlLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt6 >= 1 ) break loop6;
+            	    if ( cnt7 >= 1 ) break loop7;
                         EarlyExitException eee =
-                            new EarlyExitException(6, input);
+                            new EarlyExitException(7, input);
                         throw eee;
                 }
-                cnt6++;
+                cnt7++;
             } while (true);
 
 
             }
 
-
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         	// do for sure before leaving
         }
     }
-    // $ANTLR end "NAME"
+    // $ANTLR end "FROM"
 
-    // $ANTLR start "FROMSTATEMENT"
-    public final void mFROMSTATEMENT() throws RecognitionException {
+    // $ANTLR start "WHERE"
+    public final void mWHERE() throws RecognitionException {
         try {
-            int _type = FROMSTATEMENT;
+            int _type = WHERE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:15: ( ( 'from' | 'FROM' ) ( WS )+ NAME )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:16: ( 'from' | 'FROM' ) ( WS )+ NAME
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:7: ( ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:9: ( WS )+ ( 'where' | 'WHERE' ) ( WS )+
             {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:16: ( 'from' | 'FROM' )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0=='f') ) {
-                alt7=1;
-            }
-            else if ( (LA7_0=='F') ) {
-                alt7=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-
-            }
-            switch (alt7) {
-                case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:17: 'from'
-                    {
-                    match("from"); 
-
-
-
-                    }
-                    break;
-                case 2 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:24: 'FROM'
-                    {
-                    match("FROM"); 
-
-
-
-                    }
-                    break;
-
-            }
-
-
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:32: ( WS )+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:9: ( WS )+
             int cnt8=0;
             loop8:
             do {
@@ -399,41 +462,59 @@ public class QuerySqlLexer extends Lexer {
             } while (true);
 
 
-            mNAME(); 
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:13: ( 'where' | 'WHERE' )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
+            if ( (LA9_0=='w') ) {
+                alt9=1;
+            }
+            else if ( (LA9_0=='W') ) {
+                alt9=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
+
+                throw nvae;
+
+            }
+            switch (alt9) {
+                case 1 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:14: 'where'
+                    {
+                    match("where"); 
+
+
+
+                    }
+                    break;
+                case 2 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:22: 'WHERE'
+                    {
+                    match("WHERE"); 
+
+
+
+                    }
+                    break;
 
             }
 
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "FROMSTATEMENT"
 
-    // $ANTLR start "WHERESATEMENT"
-    public final void mWHERESATEMENT() throws RecognitionException {
-        try {
-            int _type = WHERESATEMENT;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:15: ( ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ NAME )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:17: ( WS )+ ( 'where' | 'WHERE' ) ( WS )+ NAME
-            {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:17: ( WS )+
-            int cnt9=0;
-            loop9:
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:31: ( WS )+
+            int cnt10=0;
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( ((LA9_0 >= '\t' && LA9_0 <= '\n')||LA9_0=='\r'||LA9_0==' ') ) {
-                    alt9=1;
+                if ( ((LA10_0 >= '\t' && LA10_0 <= '\n')||LA10_0=='\r'||LA10_0==' ') ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
             	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
@@ -451,63 +532,42 @@ public class QuerySqlLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt9 >= 1 ) break loop9;
+            	    if ( cnt10 >= 1 ) break loop10;
                         EarlyExitException eee =
-                            new EarlyExitException(9, input);
+                            new EarlyExitException(10, input);
                         throw eee;
                 }
-                cnt9++;
+                cnt10++;
             } while (true);
 
 
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:21: ( 'where' | 'WHERE' )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0=='w') ) {
-                alt10=1;
-            }
-            else if ( (LA10_0=='W') ) {
-                alt10=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
-
-                throw nvae;
-
-            }
-            switch (alt10) {
-                case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:22: 'where'
-                    {
-                    match("where"); 
-
-
-
-                    }
-                    break;
-                case 2 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:30: 'WHERE'
-                    {
-                    match("WHERE"); 
-
-
-
-                    }
-                    break;
-
             }
 
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "WHERE"
 
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:43:39: ( WS )+
+    // $ANTLR start "INT"
+    public final void mINT() throws RecognitionException {
+        try {
+            int _type = INT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:5: ( ( '0' .. '9' )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:7: ( '0' .. '9' )+
+            {
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:7: ( '0' .. '9' )+
             int cnt11=0;
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0 >= '\t' && LA11_0 <= '\n')||LA11_0=='\r'||LA11_0==' ') ) {
+                if ( ((LA11_0 >= '0' && LA11_0 <= '9')) ) {
                     alt11=1;
                 }
 
@@ -516,7 +576,7 @@ public class QuerySqlLexer extends Lexer {
             	case 1 :
             	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             	    {
-            	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+            	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
             	        input.consume();
             	    }
             	    else {
@@ -539,6 +599,146 @@ public class QuerySqlLexer extends Lexer {
             } while (true);
 
 
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "INT"
+
+    // $ANTLR start "FIELDVALUE"
+    public final void mFIELDVALUE() throws RecognitionException {
+        try {
+            int _type = FIELDVALUE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:50:12: ( ( '\\'' NAME '\\'' ) | INT )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0=='\'') ) {
+                alt12=1;
+            }
+            else if ( ((LA12_0 >= '0' && LA12_0 <= '9')) ) {
+                alt12=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 12, 0, input);
+
+                throw nvae;
+
+            }
+            switch (alt12) {
+                case 1 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:50:14: ( '\\'' NAME '\\'' )
+                    {
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:50:14: ( '\\'' NAME '\\'' )
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:50:15: '\\'' NAME '\\''
+                    {
+                    match('\''); 
+
+                    mNAME(); 
+
+
+                    match('\''); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:50:29: INT
+                    {
+                    mINT(); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "FIELDVALUE"
+
+    // $ANTLR start "NAME"
+    public final void mNAME() throws RecognitionException {
+        try {
+            int _type = NAME;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:51:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:51:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            {
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:51:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )+
+            int cnt13=0;
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( ((LA13_0 >= 'A' && LA13_0 <= 'Z')||LA13_0=='_'||(LA13_0 >= 'a' && LA13_0 <= 'z')) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
+            	    {
+            	    if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+            	        input.consume();
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt13 >= 1 ) break loop13;
+                        EarlyExitException eee =
+                            new EarlyExitException(13, input);
+                        throw eee;
+                }
+                cnt13++;
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "NAME"
+
+    // $ANTLR start "WHERESATEMENT"
+    public final void mWHERESATEMENT() throws RecognitionException {
+        try {
+            int _type = WHERESATEMENT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:52:15: ( WHERE NAME )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:52:17: WHERE NAME
+            {
+            mWHERE(); 
+
+
             mNAME(); 
 
 
@@ -558,17 +758,17 @@ public class QuerySqlLexer extends Lexer {
         try {
             int _type = OPTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:8: ( ( WS )? ( '>' | '<' | '=' ) ( WS )? )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:10: ( WS )? ( '>' | '<' | '=' ) ( WS )?
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:53:8: ( ( WS )? ( '>' | '<' | '=' ) ( WS )? )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:53:10: ( WS )? ( '>' | '<' | '=' ) ( WS )?
             {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:10: ( WS )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:53:10: ( WS )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( ((LA12_0 >= '\t' && LA12_0 <= '\n')||LA12_0=='\r'||LA12_0==' ') ) {
-                alt12=1;
+            if ( ((LA14_0 >= '\t' && LA14_0 <= '\n')||LA14_0=='\r'||LA14_0==' ') ) {
+                alt14=1;
             }
-            switch (alt12) {
+            switch (alt14) {
                 case 1 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
                     {
@@ -598,14 +798,14 @@ public class QuerySqlLexer extends Lexer {
             }
 
 
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:44:28: ( WS )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:53:28: ( WS )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( ((LA13_0 >= '\t' && LA13_0 <= '\n')||LA13_0=='\r'||LA13_0==' ') ) {
-                alt13=1;
+            if ( ((LA15_0 >= '\t' && LA15_0 <= '\n')||LA15_0=='\r'||LA15_0==' ') ) {
+                alt15=1;
             }
-            switch (alt13) {
+            switch (alt15) {
                 case 1 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
                     {
@@ -636,71 +836,12 @@ public class QuerySqlLexer extends Lexer {
     }
     // $ANTLR end "OPTION"
 
-    // $ANTLR start "FIELDVALUE"
-    public final void mFIELDVALUE() throws RecognitionException {
-        try {
-            int _type = FIELDVALUE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:2: ( ( '\\'' NAME '\\'' ) | '0' .. '9' )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0=='\'') ) {
-                alt14=1;
-            }
-            else if ( ((LA14_0 >= '0' && LA14_0 <= '9')) ) {
-                alt14=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
-
-                throw nvae;
-
-            }
-            switch (alt14) {
-                case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:4: ( '\\'' NAME '\\'' )
-                    {
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:4: ( '\\'' NAME '\\'' )
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:5: '\\'' NAME '\\''
-                    {
-                    match('\''); 
-
-                    mNAME(); 
-
-
-                    match('\''); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:46:19: '0' .. '9'
-                    {
-                    matchRange('0','9'); 
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "FIELDVALUE"
-
     // $ANTLR start "WS"
     public final void mWS() throws RecognitionException {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:47:4: ( ( ' ' | '\\t' | '\\n' | '\\r' ) )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:54:4: ( ( ' ' | '\\t' | '\\n' | '\\r' ) )
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
             {
             if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
@@ -724,63 +865,172 @@ public class QuerySqlLexer extends Lexer {
     }
     // $ANTLR end "WS"
 
+    // $ANTLR start "OFFSET"
+    public final void mOFFSET() throws RecognitionException {
+        try {
+            int _type = OFFSET;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:55:8: ( INT ( WS )+ )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:55:10: INT ( WS )+
+            {
+            mINT(); 
+
+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:55:14: ( WS )+
+            int cnt16=0;
+            loop16:
+            do {
+                int alt16=2;
+                int LA16_0 = input.LA(1);
+
+                if ( ((LA16_0 >= '\t' && LA16_0 <= '\n')||LA16_0=='\r'||LA16_0==' ') ) {
+                    alt16=1;
+                }
+
+
+                switch (alt16) {
+            	case 1 :
+            	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:
+            	    {
+            	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+            	        input.consume();
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt16 >= 1 ) break loop16;
+                        EarlyExitException eee =
+                            new EarlyExitException(16, input);
+                        throw eee;
+                }
+                cnt16++;
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "OFFSET"
+
     public void mTokens() throws RecognitionException {
-        // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:8: ( SELECT | SELECTFIELD | FROMSTATEMENT | WHERESATEMENT | OPTION | FIELDVALUE | WS )
-        int alt15=7;
-        alt15 = dfa15.predict(input);
-        switch (alt15) {
+        // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:8: ( T__15 | T__16 | SELECT | LIMIT | FROM | WHERE | INT | FIELDVALUE | NAME | WHERESATEMENT | OPTION | WS | OFFSET )
+        int alt17=13;
+        alt17 = dfa17.predict(input);
+        switch (alt17) {
             case 1 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:10: SELECT
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:10: T__15
+                {
+                mT__15(); 
+
+
+                }
+                break;
+            case 2 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:16: T__16
+                {
+                mT__16(); 
+
+
+                }
+                break;
+            case 3 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:22: SELECT
                 {
                 mSELECT(); 
 
 
                 }
                 break;
-            case 2 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:17: SELECTFIELD
-                {
-                mSELECTFIELD(); 
-
-
-                }
-                break;
-            case 3 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:29: FROMSTATEMENT
-                {
-                mFROMSTATEMENT(); 
-
-
-                }
-                break;
             case 4 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:43: WHERESATEMENT
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:29: LIMIT
                 {
-                mWHERESATEMENT(); 
+                mLIMIT(); 
 
 
                 }
                 break;
             case 5 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:57: OPTION
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:35: FROM
                 {
-                mOPTION(); 
+                mFROM(); 
 
 
                 }
                 break;
             case 6 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:64: FIELDVALUE
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:40: WHERE
+                {
+                mWHERE(); 
+
+
+                }
+                break;
+            case 7 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:46: INT
+                {
+                mINT(); 
+
+
+                }
+                break;
+            case 8 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:50: FIELDVALUE
                 {
                 mFIELDVALUE(); 
 
 
                 }
                 break;
-            case 7 :
-                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:75: WS
+            case 9 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:61: NAME
+                {
+                mNAME(); 
+
+
+                }
+                break;
+            case 10 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:66: WHERESATEMENT
+                {
+                mWHERESATEMENT(); 
+
+
+                }
+                break;
+            case 11 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:80: OPTION
+                {
+                mOPTION(); 
+
+
+                }
+                break;
+            case 12 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:87: WS
                 {
                 mWS(); 
+
+
+                }
+                break;
+            case 13 :
+                // /E:/workspace/sql4nosql/target/classes/QuerySql.g:1:90: OFFSET
+                {
+                mOFFSET(); 
 
 
                 }
@@ -791,110 +1041,114 @@ public class QuerySqlLexer extends Lexer {
     }
 
 
-    protected DFA15 dfa15 = new DFA15(this);
-    static final String DFA15_eotS =
-        "\6\uffff\1\16\22\uffff\1\3\3\uffff\1\36\1\uffff";
-    static final String DFA15_eofS =
-        "\37\uffff";
-    static final String DFA15_minS =
-        "\3\11\1\uffff\3\11\2\uffff\4\11\2\uffff\15\11\1\uffff\1\11\1\uffff";
-    static final String DFA15_maxS =
-        "\3\172\1\uffff\2\172\1\167\2\uffff\4\172\2\uffff\15\172\1\uffff"+
-        "\1\40\1\uffff";
-    static final String DFA15_acceptS =
-        "\3\uffff\1\2\3\uffff\1\5\1\6\4\uffff\1\4\1\7\15\uffff\1\3\1\uffff"+
-        "\1\1";
-    static final String DFA15_specialS =
-        "\37\uffff}>";
-    static final String[] DFA15_transitionS = {
-            "\2\6\2\uffff\1\6\22\uffff\1\6\6\uffff\1\10\2\uffff\1\3\5\uffff"+
-            "\12\10\2\uffff\3\7\2\uffff\5\3\1\5\14\3\1\2\7\3\4\uffff\1\3"+
-            "\1\uffff\5\3\1\4\14\3\1\1\7\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\4\3\1\11\25\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\4\3\1\12"+
-            "\25\3\4\uffff\1\3\1\uffff\32\3",
-            "",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\21\3\1\13\10\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\21\3\1"+
-            "\14\10\3\4\uffff\1\3\1\uffff\32\3",
-            "\2\15\2\uffff\1\15\22\uffff\1\15\33\uffff\3\7\30\uffff\1\15"+
-            "\37\uffff\1\15",
+    protected DFA17 dfa17 = new DFA17(this);
+    static final String DFA17_eotS =
+        "\3\uffff\2\12\1\22\2\12\1\25\3\uffff\2\12\5\uffff\2\12\2\uffff\2"+
+        "\12\2\uffff\4\12\2\uffff\4\12\3\uffff\2\12\3\uffff\1\56\2\uffff";
+    static final String DFA17_eofS =
+        "\60\uffff";
+    static final String DFA17_minS =
+        "\1\11\2\uffff\1\145\1\105\1\11\1\162\1\122\1\11\3\uffff\1\154\1"+
+        "\114\1\uffff\1\11\1\150\1\110\1\uffff\1\157\1\117\2\uffff\1\145"+
+        "\1\105\1\145\1\105\1\155\1\115\1\143\1\103\1\162\1\122\2\11\1\164"+
+        "\1\124\1\145\1\105\1\uffff\4\11\1\uffff\1\11\2\uffff";
+    static final String DFA17_maxS =
+        "\1\172\2\uffff\1\145\1\105\1\167\1\162\1\122\1\71\3\uffff\1\154"+
+        "\1\114\1\uffff\1\167\1\150\1\110\1\uffff\1\157\1\117\2\uffff\1\145"+
+        "\1\105\1\145\1\105\1\155\1\115\1\143\1\103\1\162\1\122\2\40\1\164"+
+        "\1\124\1\145\1\105\1\uffff\4\40\1\uffff\1\172\2\uffff";
+    static final String DFA17_acceptS =
+        "\1\uffff\1\1\1\2\6\uffff\1\10\1\11\1\13\2\uffff\1\4\3\uffff\1\14"+
+        "\2\uffff\1\7\1\15\20\uffff\1\5\4\uffff\1\3\1\uffff\1\6\1\12";
+    static final String DFA17_specialS =
+        "\60\uffff}>";
+    static final String[] DFA17_transitionS = {
+            "\2\5\2\uffff\1\5\22\uffff\1\5\6\uffff\1\11\2\uffff\1\1\1\uffff"+
+            "\1\2\3\uffff\12\10\2\uffff\3\13\2\uffff\5\12\1\7\14\12\1\4\7"+
+            "\12\4\uffff\1\12\1\uffff\5\12\1\6\14\12\1\3\7\12",
             "",
             "",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\13\3\1\17\16\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\13\3\1"+
-            "\20\16\3\4\uffff\1\3\1\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\16\3\1\21\13\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\16\3\1"+
-            "\22\13\3\4\uffff\1\3\1\uffff\32\3",
+            "\1\14",
+            "\1\15",
+            "\2\17\2\uffff\1\17\22\uffff\1\17\33\uffff\3\13\15\uffff\1\16"+
+            "\12\uffff\1\21\24\uffff\1\16\12\uffff\1\20",
+            "\1\23",
+            "\1\24",
+            "\2\26\2\uffff\1\26\22\uffff\1\26\17\uffff\12\10",
             "",
             "",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\4\3\1\23\25\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\4\3\1\24"+
-            "\25\3\4\uffff\1\3\1\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\14\3\1\25\15\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\14\3\1"+
-            "\26\15\3\4\uffff\1\3\1\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\2\3\1\27\27\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\2\3\1\30"+
-            "\27\3\4\uffff\1\3\1\uffff\32\3",
-            "\2\31\2\uffff\1\31\22\uffff\1\31\13\uffff\1\3\24\uffff\32\3"+
-            "\4\uffff\1\3\1\uffff\32\3",
-            "\2\31\2\uffff\1\31\22\uffff\1\31\13\uffff\1\3\24\uffff\32\3"+
-            "\4\uffff\1\3\1\uffff\32\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\32\3\4"+
-            "\uffff\1\3\1\uffff\23\3\1\32\6\3",
-            "\2\3\2\uffff\1\3\22\uffff\1\3\13\uffff\1\3\24\uffff\23\3\1"+
-            "\33\6\3\4\uffff\1\3\1\uffff\32\3",
-            "\2\31\2\uffff\1\31\22\uffff\1\31\40\uffff\32\34\4\uffff\1\34"+
-            "\1\uffff\32\34",
-            "\2\35\2\uffff\1\35\22\uffff\1\35\13\uffff\1\3\24\uffff\32\3"+
-            "\4\uffff\1\3\1\uffff\32\3",
-            "\2\35\2\uffff\1\35\22\uffff\1\35\13\uffff\1\3\24\uffff\32\3"+
-            "\4\uffff\1\3\1\uffff\32\3",
             "",
-            "\2\35\2\uffff\1\35\22\uffff\1\35",
+            "\1\27",
+            "\1\30",
+            "",
+            "\2\17\2\uffff\1\17\22\uffff\1\17\53\uffff\1\16\12\uffff\1\21"+
+            "\24\uffff\1\16\12\uffff\1\20",
+            "\1\31",
+            "\1\32",
+            "",
+            "\1\33",
+            "\1\34",
+            "",
+            "",
+            "\1\35",
+            "\1\36",
+            "\1\37",
+            "\1\40",
+            "\1\41",
+            "\1\42",
+            "\1\43",
+            "\1\44",
+            "\1\45",
+            "\1\46",
+            "\2\47\2\uffff\1\47\22\uffff\1\47",
+            "\2\47\2\uffff\1\47\22\uffff\1\47",
+            "\1\50",
+            "\1\51",
+            "\1\52",
+            "\1\53",
+            "",
+            "\2\54\2\uffff\1\54\22\uffff\1\54",
+            "\2\54\2\uffff\1\54\22\uffff\1\54",
+            "\2\55\2\uffff\1\55\22\uffff\1\55",
+            "\2\55\2\uffff\1\55\22\uffff\1\55",
+            "",
+            "\2\55\2\uffff\1\55\22\uffff\1\55\40\uffff\32\57\4\uffff\1\57"+
+            "\1\uffff\32\57",
+            "",
             ""
     };
 
-    static final short[] DFA15_eot = DFA.unpackEncodedString(DFA15_eotS);
-    static final short[] DFA15_eof = DFA.unpackEncodedString(DFA15_eofS);
-    static final char[] DFA15_min = DFA.unpackEncodedStringToUnsignedChars(DFA15_minS);
-    static final char[] DFA15_max = DFA.unpackEncodedStringToUnsignedChars(DFA15_maxS);
-    static final short[] DFA15_accept = DFA.unpackEncodedString(DFA15_acceptS);
-    static final short[] DFA15_special = DFA.unpackEncodedString(DFA15_specialS);
-    static final short[][] DFA15_transition;
+    static final short[] DFA17_eot = DFA.unpackEncodedString(DFA17_eotS);
+    static final short[] DFA17_eof = DFA.unpackEncodedString(DFA17_eofS);
+    static final char[] DFA17_min = DFA.unpackEncodedStringToUnsignedChars(DFA17_minS);
+    static final char[] DFA17_max = DFA.unpackEncodedStringToUnsignedChars(DFA17_maxS);
+    static final short[] DFA17_accept = DFA.unpackEncodedString(DFA17_acceptS);
+    static final short[] DFA17_special = DFA.unpackEncodedString(DFA17_specialS);
+    static final short[][] DFA17_transition;
 
     static {
-        int numStates = DFA15_transitionS.length;
-        DFA15_transition = new short[numStates][];
+        int numStates = DFA17_transitionS.length;
+        DFA17_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA15_transition[i] = DFA.unpackEncodedString(DFA15_transitionS[i]);
+            DFA17_transition[i] = DFA.unpackEncodedString(DFA17_transitionS[i]);
         }
     }
 
-    class DFA15 extends DFA {
+    class DFA17 extends DFA {
 
-        public DFA15(BaseRecognizer recognizer) {
+        public DFA17(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 15;
-            this.eot = DFA15_eot;
-            this.eof = DFA15_eof;
-            this.min = DFA15_min;
-            this.max = DFA15_max;
-            this.accept = DFA15_accept;
-            this.special = DFA15_special;
-            this.transition = DFA15_transition;
+            this.decisionNumber = 17;
+            this.eot = DFA17_eot;
+            this.eof = DFA17_eof;
+            this.min = DFA17_min;
+            this.max = DFA17_max;
+            this.accept = DFA17_accept;
+            this.special = DFA17_special;
+            this.transition = DFA17_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( SELECT | SELECTFIELD | FROMSTATEMENT | WHERESATEMENT | OPTION | FIELDVALUE | WS );";
+            return "1:1: Tokens : ( T__15 | T__16 | SELECT | LIMIT | FROM | WHERE | INT | FIELDVALUE | NAME | WHERESATEMENT | OPTION | WS | OFFSET );";
         }
     }
  

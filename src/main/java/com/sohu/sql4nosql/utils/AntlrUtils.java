@@ -29,4 +29,10 @@ public class AntlrUtils {
 		}
 		
 	}
+	
+	public static void main(String[] args) {
+		QuerySqlLexer lexer = new QuerySqlLexer(new ANTLRStringStream("select name from users limit 0 1"));
+		CommonTokenStream tokens = new CommonTokenStream(lexer); 
+		System.out.println(tokens);
+	}
 }

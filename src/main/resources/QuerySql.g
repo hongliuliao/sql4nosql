@@ -11,21 +11,21 @@ package com.sohu.sql4nosql.build;
 }
 
 querySql returns [QuerySqlStruct result = new QuerySqlStruct()]
-	:	selectFromStatement[result] (whereStatement[result])?{
+	:	selectFromStatement[result] (whereStatement[result])? limitStatement[result]?{
 	};
 
 selectFromStatement [QuerySqlStruct result]
 	:	selectStatement[result] fromStatement[result]{
 	};
 selectStatement [QuerySqlStruct result]
-	:	SELECT SELECTFIELD {
-		String selectFieldNames = $SELECTFIELD.text;
-		$result.selectFields = Arrays.asList(selectFieldNames.split(","));
+	:	SELECT ('*'|selectFieldName[result] (',' selectFieldName[result])*) WS+ ;
+selectFieldName [QuerySqlStruct result]
+	:	NAME {
+		$result.selectFields.add($NAME.text);
 	};
 fromStatement [QuerySqlStruct result]
-	:	FROMSTATEMENT{
-		String[] fromStatements = $FROMSTATEMENT.text.split(" ");
-		$result.tableName = fromStatements[fromStatements.length-1];
+	:	FROM NAME WS?{
+		$result.tableName = $NAME.text;
 	};
 whereStatement [QuerySqlStruct result]
  	:	WHERESATEMENT OPTION FIELDVALUE{
@@ -35,13 +35,21 @@ whereStatement [QuerySqlStruct result]
  		$result.fieldValue = $FIELDVALUE.text;
  	};
 	
+limitStatement [QuerySqlStruct result]
+	:	 LIMIT OFFSET? INT {
+		result.offset = Integer.parseInt($OFFSET.text.trim());
+		result.rowLimit = Integer.parseInt($INT.text);
+	};
 
 SELECT:('select'|'SELECT')WS+ ;
-SELECTFIELD:('*'|NAME (',' NAME)*) WS+;
-fragment NAME:('a'..'z'|'A'..'Z'|'_')+;
-FROMSTATEMENT	:('from'|'FROM') WS+ NAME;
-WHERESATEMENT	:	WS+ ('where'|'WHERE') WS+ NAME ;
+LIMIT :  WS+ ('limit'|'LIMIT') WS+;
+FROM : ('from'|'FROM') WS+;
+WHERE : WS+ ('where'|'WHERE') WS+;
+
+INT : ('0'..'9')+;
+FIELDVALUE :	('\''NAME'\'')|INT;
+NAME:('a'..'z'|'A'..'Z'|'_')+ ;
+WHERESATEMENT	: WHERE NAME ;
 OPTION	:	WS? ('>'|'<'|'=') WS?;
-FIELDVALUE
-	:	('\''NAME'\'')|'0'..'9';
 WS : (' ' |'\t' |'\n' |'\r' );
+OFFSET : INT WS+;

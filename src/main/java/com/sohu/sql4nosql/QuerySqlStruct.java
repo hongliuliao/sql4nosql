@@ -19,7 +19,7 @@ public class QuerySqlStruct {
 	/**
 	 * 查询的字段
 	 */
-	public List<String> selectFields;
+	public List<String> selectFields = new ArrayList<String>();
 	/**
 	 * filt field name
 	 */
@@ -36,6 +36,10 @@ public class QuerySqlStruct {
 	 * Select table's name
 	 */
 	public String tableName;
+	
+	public int offset;
+	
+	public int rowLimit;
 	
 	public String getFieldValue() {
 		return fieldValue;
