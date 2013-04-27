@@ -11,7 +11,8 @@ package com.sohu.sql4nosql.build;
 }
 
 querySql returns [QuerySqlStruct result = new QuerySqlStruct()]
-	:	selectFromStatement[result] (whereStatement[result])? limitStatement[result]?;
+	:	selectFromStatement[result] (whereStatement[result])? 
+		orderStatement[result]? limitStatement[result]?;
 
 selectFromStatement [QuerySqlStruct result]
 	:	selectStatement[result] FROM NAME WS?{
@@ -29,7 +30,14 @@ whereStatement [QuerySqlStruct result]
  		$result.option = $OPTION.text;
  		$result.fieldValue = $FIELDVALUE.text;
  	};
-	
+
+orderStatement [QuerySqlStruct result]
+	:	ORDERBY NAME (WS+ (DESC|ASC?))? {
+		result.orderFieldName = $NAME.text;
+		if($DESC.text != null) {
+			result.orderType = 1;
+		}
+	};
 limitStatement [QuerySqlStruct result]
 	:	 LIMIT OFFSET? INT {
 		if($OFFSET.text != null) {
@@ -43,6 +51,9 @@ SELECT:('select'|'SELECT')WS+ ;
 LIMIT :  WS+ ('limit'|'LIMIT') WS+;
 FROM : ('from'|'FROM') WS+;
 WHERE : WS+ ('where'|'WHERE') WS+;
+ORDERBY : WS+ ('order by'|'ORDER BY') WS+;
+DESC : ('desc'|'DESC');
+ASC	: ('asc'|'ASC');
 
 INT : ('0'..'9')+;
 NAME:('a'..'z'|'A'..'Z'|'_')+ ;

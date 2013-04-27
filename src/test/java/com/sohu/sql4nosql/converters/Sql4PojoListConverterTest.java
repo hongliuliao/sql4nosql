@@ -17,12 +17,12 @@ public class Sql4PojoListConverterTest {
 	public void init() {
 		users.add(new MockUser(1,"tom",new Date()));
 		users.add(new MockUser(2,"jerry",new Date()));
-		users.add(new MockUser(3,"jim",new Date()));
+		users.add(new MockUser(3,"yam",new Date()));
 		converter = new Sql4PojoListConverter(users);
 	}
 	@Test
 	public void testQueryForList_selectOne() throws Exception {
-		List<Map<String, ?>> result = converter.queryForList("select name from users limit 0 2");
+		List<Map<String, ?>> result = converter.queryForList("select name from users order by id desc limit 0 2");
 		System.out.println("testQueryForList_selectOne:"+result);
 	} 
 	@Test

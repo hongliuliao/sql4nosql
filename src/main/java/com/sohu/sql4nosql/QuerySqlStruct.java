@@ -37,6 +37,13 @@ public class QuerySqlStruct {
 	 */
 	public String tableName;
 	
+	public String orderFieldName;
+	
+	/**
+	 * 0 表示升序,1表示降序
+	 */
+	public int orderType;
+	
 	public Integer offset;
 	
 	public Integer rowLimit;
