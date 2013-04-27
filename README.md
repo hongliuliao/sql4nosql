@@ -7,7 +7,7 @@ This is a project about use sql to handle onsql things ,for example files ,java 
 
 Following is the Sql4PojoListConverter test:
 
-    public List<MockUser> users = new ArrayList<MockUser>();
+     public List<MockUser> users = new ArrayList<MockUser>();
      private Sql4PojoListConverter converter;
     	@Before
     	public void init() {
