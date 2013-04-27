@@ -3,7 +3,7 @@ sql4nosql
 
 sql nosql
  
-This is a project about use sql to handle onsql things ,for example files ,java collections
+This is a project about use sql to handle nosql things ,for example files ,java collections
 
 Following is the Sql4PojoListConverter test:
 
