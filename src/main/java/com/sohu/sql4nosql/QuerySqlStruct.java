@@ -37,9 +37,9 @@ public class QuerySqlStruct {
 	 */
 	public String tableName;
 	
-	public int offset;
+	public Integer offset;
 	
-	public int rowLimit;
+	public Integer rowLimit;
 	
 	public String getFieldValue() {
 		return fieldValue;

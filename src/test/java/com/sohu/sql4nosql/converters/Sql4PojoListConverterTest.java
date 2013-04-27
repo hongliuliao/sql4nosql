@@ -22,7 +22,7 @@ public class Sql4PojoListConverterTest {
 	}
 	@Test
 	public void testQueryForList_selectOne() throws Exception {
-		List<Map<String, ?>> result = converter.queryForList("select name from users limit 0 1");
+		List<Map<String, ?>> result = converter.queryForList("select name from users limit 0 2");
 		System.out.println("testQueryForList_selectOne:"+result);
 	} 
 	@Test

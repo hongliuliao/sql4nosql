@@ -53,6 +53,13 @@ public class Sql4PojoListConverter implements ISql4NosqlConverter{
 					result.add(values);
 				}
 			}
+			int offset = 0;
+			if(sqlStruct.offset != null) {
+				offset = sqlStruct.offset;
+			}
+			if(sqlStruct.rowLimit != null) {
+				result = result.subList(offset, sqlStruct.rowLimit >= result.size() ? result.size() - 1 : sqlStruct.rowLimit);
+			}
 		} catch (Exception e) {
 			throw new RuntimeException("Get sql map error which sql:"+sql,e);
 		}
