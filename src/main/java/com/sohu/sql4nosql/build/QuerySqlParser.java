@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /E:/workspace/sql4nosql/target/classes/QuerySql.g 2013-04-27 18:36:47
+// $ANTLR 3.4 /E:/workspace/sql4nosql/target/classes/QuerySql.g 2013-04-27 19:17:54
 
 package com.sohu.sql4nosql.build;
 
@@ -14,25 +14,25 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class QuerySqlParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ASC", "DESC", "FIELDVALUE", "FROM", "INT", "LIMIT", "NAME", "OFFSET", "OPTION", "ORDERBY", "SELECT", "WHERE", "WS", "'*'", "','"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ASC", "DESC", "FROM", "INT", "LIMIT", "NAME", "OFFSET", "OPTION", "ORDERBY", "SELECT", "WHERE", "WS", "'*'", "','", "'\\''"
     };
 
     public static final int EOF=-1;
+    public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int ASC=4;
     public static final int DESC=5;
-    public static final int FIELDVALUE=6;
-    public static final int FROM=7;
-    public static final int INT=8;
-    public static final int LIMIT=9;
-    public static final int NAME=10;
-    public static final int OFFSET=11;
-    public static final int OPTION=12;
-    public static final int ORDERBY=13;
-    public static final int SELECT=14;
-    public static final int WHERE=15;
-    public static final int WS=16;
+    public static final int FROM=6;
+    public static final int INT=7;
+    public static final int LIMIT=8;
+    public static final int NAME=9;
+    public static final int OFFSET=10;
+    public static final int OPTION=11;
+    public static final int ORDERBY=12;
+    public static final int SELECT=13;
+    public static final int WHERE=14;
+    public static final int WS=15;
 
     // delegates
     public Parser[] getDelegates() {
@@ -79,9 +79,9 @@ public class QuerySqlParser extends Parser {
             }
             switch (alt1) {
                 case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:14:33: whereStatement[result]
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:14:32: whereStatement[result]
                     {
-                    pushFollow(FOLLOW_whereStatement_in_querySql31);
+                    pushFollow(FOLLOW_whereStatement_in_querySql30);
                     whereStatement(result);
 
                     state._fsp--;
@@ -104,7 +104,7 @@ public class QuerySqlParser extends Parser {
                 case 1 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:15:3: orderStatement[result]
                     {
-                    pushFollow(FOLLOW_orderStatement_in_querySql39);
+                    pushFollow(FOLLOW_orderStatement_in_querySql37);
                     orderStatement(result);
 
                     state._fsp--;
@@ -127,7 +127,7 @@ public class QuerySqlParser extends Parser {
                 case 1 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:15:27: limitStatement[result]
                     {
-                    pushFollow(FOLLOW_limitStatement_in_querySql43);
+                    pushFollow(FOLLOW_limitStatement_in_querySql41);
                     limitStatement(result);
 
                     state._fsp--;
@@ -165,15 +165,15 @@ public class QuerySqlParser extends Parser {
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:18:2: ( selectStatement[result] FROM NAME ( WS )? )
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:18:4: selectStatement[result] FROM NAME ( WS )?
             {
-            pushFollow(FOLLOW_selectStatement_in_selectFromStatement56);
+            pushFollow(FOLLOW_selectStatement_in_selectFromStatement54);
             selectStatement(result);
 
             state._fsp--;
 
 
-            match(input,FROM,FOLLOW_FROM_in_selectFromStatement59); 
+            match(input,FROM,FOLLOW_FROM_in_selectFromStatement57); 
 
-            NAME1=(Token)match(input,NAME,FOLLOW_NAME_in_selectFromStatement61); 
+            NAME1=(Token)match(input,NAME,FOLLOW_NAME_in_selectFromStatement59); 
 
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:18:38: ( WS )?
             int alt4=2;
@@ -186,7 +186,7 @@ public class QuerySqlParser extends Parser {
                 case 1 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:18:38: WS
                     {
-                    match(input,WS,FOLLOW_WS_in_selectFromStatement63); 
+                    match(input,WS,FOLLOW_WS_in_selectFromStatement61); 
 
                     }
                     break;
@@ -222,13 +222,13 @@ public class QuerySqlParser extends Parser {
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:2: ( SELECT ( '*' | selectFieldName[result] ( ',' selectFieldName[result] )* ) ( WS )+ )
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:4: SELECT ( '*' | selectFieldName[result] ( ',' selectFieldName[result] )* ) ( WS )+
             {
-            match(input,SELECT,FOLLOW_SELECT_in_selectStatement75); 
+            match(input,SELECT,FOLLOW_SELECT_in_selectStatement73); 
 
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:11: ( '*' | selectFieldName[result] ( ',' selectFieldName[result] )* )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
+            if ( (LA6_0==16) ) {
                 alt6=1;
             }
             else if ( (LA6_0==NAME) ) {
@@ -245,14 +245,14 @@ public class QuerySqlParser extends Parser {
                 case 1 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:12: '*'
                     {
-                    match(input,17,FOLLOW_17_in_selectStatement78); 
+                    match(input,16,FOLLOW_16_in_selectStatement76); 
 
                     }
                     break;
                 case 2 :
                     // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:16: selectFieldName[result] ( ',' selectFieldName[result] )*
                     {
-                    pushFollow(FOLLOW_selectFieldName_in_selectStatement80);
+                    pushFollow(FOLLOW_selectFieldName_in_selectStatement78);
                     selectFieldName(result);
 
                     state._fsp--;
@@ -264,7 +264,7 @@ public class QuerySqlParser extends Parser {
                         int alt5=2;
                         int LA5_0 = input.LA(1);
 
-                        if ( (LA5_0==18) ) {
+                        if ( (LA5_0==17) ) {
                             alt5=1;
                         }
 
@@ -273,9 +273,9 @@ public class QuerySqlParser extends Parser {
                     	case 1 :
                     	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:41: ',' selectFieldName[result]
                     	    {
-                    	    match(input,18,FOLLOW_18_in_selectStatement84); 
+                    	    match(input,17,FOLLOW_17_in_selectStatement82); 
 
-                    	    pushFollow(FOLLOW_selectFieldName_in_selectStatement86);
+                    	    pushFollow(FOLLOW_selectFieldName_in_selectStatement84);
                     	    selectFieldName(result);
 
                     	    state._fsp--;
@@ -312,7 +312,7 @@ public class QuerySqlParser extends Parser {
             	case 1 :
             	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:22:72: WS
             	    {
-            	    match(input,WS,FOLLOW_WS_in_selectStatement92); 
+            	    match(input,WS,FOLLOW_WS_in_selectStatement90); 
 
             	    }
             	    break;
@@ -353,7 +353,7 @@ public class QuerySqlParser extends Parser {
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:24:2: ( NAME )
             // /E:/workspace/sql4nosql/target/classes/QuerySql.g:24:4: NAME
             {
-            NAME2=(Token)match(input,NAME,FOLLOW_NAME_in_selectFieldName104); 
+            NAME2=(Token)match(input,NAME,FOLLOW_NAME_in_selectFieldName102); 
 
 
             		result.selectFields.add((NAME2!=null?NAME2.getText():null));
@@ -377,28 +377,30 @@ public class QuerySqlParser extends Parser {
 
 
     // $ANTLR start "whereStatement"
-    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:27:1: whereStatement[QuerySqlStruct result] : WHERE NAME OPTION FIELDVALUE ;
+    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:27:1: whereStatement[QuerySqlStruct result] : WHERE NAME OPTION fieldValue[result] ;
     public final void whereStatement(QuerySqlStruct result) throws RecognitionException {
         Token NAME3=null;
         Token OPTION4=null;
-        Token FIELDVALUE5=null;
 
         try {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:28:3: ( WHERE NAME OPTION FIELDVALUE )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:28:5: WHERE NAME OPTION FIELDVALUE
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:28:3: ( WHERE NAME OPTION fieldValue[result] )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:28:5: WHERE NAME OPTION fieldValue[result]
             {
-            match(input,WHERE,FOLLOW_WHERE_in_whereStatement117); 
+            match(input,WHERE,FOLLOW_WHERE_in_whereStatement115); 
 
-            NAME3=(Token)match(input,NAME,FOLLOW_NAME_in_whereStatement119); 
+            NAME3=(Token)match(input,NAME,FOLLOW_NAME_in_whereStatement117); 
 
-            OPTION4=(Token)match(input,OPTION,FOLLOW_OPTION_in_whereStatement121); 
+            OPTION4=(Token)match(input,OPTION,FOLLOW_OPTION_in_whereStatement119); 
 
-            FIELDVALUE5=(Token)match(input,FIELDVALUE,FOLLOW_FIELDVALUE_in_whereStatement123); 
+            pushFollow(FOLLOW_fieldValue_in_whereStatement121);
+            fieldValue(result);
+
+            state._fsp--;
+
 
 
              		result.whereFieldName = (NAME3!=null?NAME3.getText():null);
              		result.option = (OPTION4!=null?OPTION4.getText():null);
-             		result.fieldValue = (FIELDVALUE5!=null?FIELDVALUE5.getText():null);
              	
 
             }
@@ -418,102 +420,183 @@ public class QuerySqlParser extends Parser {
 
 
 
-    // $ANTLR start "orderStatement"
-    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:34:1: orderStatement[QuerySqlStruct result] : ORDERBY NAME ( ( WS )+ ( DESC | ( ASC )? ) )? ;
-    public final void orderStatement(QuerySqlStruct result) throws RecognitionException {
-        Token NAME6=null;
-        Token DESC7=null;
+    // $ANTLR start "fieldValue"
+    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:32:1: fieldValue[QuerySqlStruct result] : ( ( '\\'' NAME '\\'' ) | INT ) ;
+    public final void fieldValue(QuerySqlStruct result) throws RecognitionException {
+        Token NAME5=null;
+        Token INT6=null;
 
         try {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:2: ( ORDERBY NAME ( ( WS )+ ( DESC | ( ASC )? ) )? )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:4: ORDERBY NAME ( ( WS )+ ( DESC | ( ASC )? ) )?
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:2: ( ( ( '\\'' NAME '\\'' ) | INT ) )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:4: ( ( '\\'' NAME '\\'' ) | INT )
             {
-            match(input,ORDERBY,FOLLOW_ORDERBY_in_orderStatement135); 
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:4: ( ( '\\'' NAME '\\'' ) | INT )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            NAME6=(Token)match(input,NAME,FOLLOW_NAME_in_orderStatement137); 
-
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:17: ( ( WS )+ ( DESC | ( ASC )? ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==WS) ) {
-                alt11=1;
+            if ( (LA8_0==18) ) {
+                alt8=1;
             }
-            switch (alt11) {
-                case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:18: ( WS )+ ( DESC | ( ASC )? )
-                    {
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:18: ( WS )+
-                    int cnt8=0;
-                    loop8:
-                    do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
+            else if ( (LA8_0==INT) ) {
+                alt8=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 8, 0, input);
 
-                        if ( (LA8_0==WS) ) {
-                            alt8=1;
+                throw nvae;
+
+            }
+            switch (alt8) {
+                case 1 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:5: ( '\\'' NAME '\\'' )
+                    {
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:5: ( '\\'' NAME '\\'' )
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:6: '\\'' NAME '\\''
+                    {
+                    match(input,18,FOLLOW_18_in_fieldValue136); 
+
+                    NAME5=(Token)match(input,NAME,FOLLOW_NAME_in_fieldValue137); 
+
+                    match(input,18,FOLLOW_18_in_fieldValue138); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:33:20: INT
+                    {
+                    INT6=(Token)match(input,INT,FOLLOW_INT_in_fieldValue141); 
+
+                    }
+                    break;
+
+            }
+
+
+
+            		if((NAME5!=null?NAME5.getText():null) != null) {
+            			result.fieldValue = (NAME5!=null?NAME5.getText():null);
+            		} else {
+            			result.fieldValue = (INT6!=null?INT6.getText():null);
+            		}
+            	
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return ;
+    }
+    // $ANTLR end "fieldValue"
+
+
+
+    // $ANTLR start "orderStatement"
+    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:1: orderStatement[QuerySqlStruct result] : ORDERBY NAME ( ( WS )+ ( DESC | ( ASC )? ) )? ;
+    public final void orderStatement(QuerySqlStruct result) throws RecognitionException {
+        Token NAME7=null;
+        Token DESC8=null;
+
+        try {
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:2: ( ORDERBY NAME ( ( WS )+ ( DESC | ( ASC )? ) )? )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:4: ORDERBY NAME ( ( WS )+ ( DESC | ( ASC )? ) )?
+            {
+            match(input,ORDERBY,FOLLOW_ORDERBY_in_orderStatement155); 
+
+            NAME7=(Token)match(input,NAME,FOLLOW_NAME_in_orderStatement157); 
+
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:17: ( ( WS )+ ( DESC | ( ASC )? ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==WS) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:18: ( WS )+ ( DESC | ( ASC )? )
+                    {
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:18: ( WS )+
+                    int cnt9=0;
+                    loop9:
+                    do {
+                        int alt9=2;
+                        int LA9_0 = input.LA(1);
+
+                        if ( (LA9_0==WS) ) {
+                            alt9=1;
                         }
 
 
-                        switch (alt8) {
+                        switch (alt9) {
                     	case 1 :
-                    	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:18: WS
+                    	    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:18: WS
                     	    {
-                    	    match(input,WS,FOLLOW_WS_in_orderStatement140); 
+                    	    match(input,WS,FOLLOW_WS_in_orderStatement160); 
 
                     	    }
                     	    break;
 
                     	default :
-                    	    if ( cnt8 >= 1 ) break loop8;
+                    	    if ( cnt9 >= 1 ) break loop9;
                                 EarlyExitException eee =
-                                    new EarlyExitException(8, input);
+                                    new EarlyExitException(9, input);
                                 throw eee;
                         }
-                        cnt8++;
+                        cnt9++;
                     } while (true);
 
 
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:22: ( DESC | ( ASC )? )
-                    int alt10=2;
-                    int LA10_0 = input.LA(1);
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:22: ( DESC | ( ASC )? )
+                    int alt11=2;
+                    int LA11_0 = input.LA(1);
 
-                    if ( (LA10_0==DESC) ) {
-                        alt10=1;
+                    if ( (LA11_0==DESC) ) {
+                        alt11=1;
                     }
-                    else if ( (LA10_0==EOF||LA10_0==ASC||LA10_0==LIMIT) ) {
-                        alt10=2;
+                    else if ( (LA11_0==EOF||LA11_0==ASC||LA11_0==LIMIT) ) {
+                        alt11=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 10, 0, input);
+                            new NoViableAltException("", 11, 0, input);
 
                         throw nvae;
 
                     }
-                    switch (alt10) {
+                    switch (alt11) {
                         case 1 :
-                            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:23: DESC
+                            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:23: DESC
                             {
-                            DESC7=(Token)match(input,DESC,FOLLOW_DESC_in_orderStatement144); 
+                            DESC8=(Token)match(input,DESC,FOLLOW_DESC_in_orderStatement164); 
 
                             }
                             break;
                         case 2 :
-                            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:28: ( ASC )?
+                            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:28: ( ASC )?
                             {
-                            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:28: ( ASC )?
-                            int alt9=2;
-                            int LA9_0 = input.LA(1);
+                            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:28: ( ASC )?
+                            int alt10=2;
+                            int LA10_0 = input.LA(1);
 
-                            if ( (LA9_0==ASC) ) {
-                                alt9=1;
+                            if ( (LA10_0==ASC) ) {
+                                alt10=1;
                             }
-                            switch (alt9) {
+                            switch (alt10) {
                                 case 1 :
-                                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:35:28: ASC
+                                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:28: ASC
                                     {
-                                    match(input,ASC,FOLLOW_ASC_in_orderStatement146); 
+                                    match(input,ASC,FOLLOW_ASC_in_orderStatement166); 
 
                                     }
                                     break;
@@ -534,8 +617,8 @@ public class QuerySqlParser extends Parser {
 
 
 
-            		result.orderFieldName = (NAME6!=null?NAME6.getText():null);
-            		if((DESC7!=null?DESC7.getText():null) != null) {
+            		result.orderFieldName = (NAME7!=null?NAME7.getText():null);
+            		if((DESC8!=null?DESC8.getText():null) != null) {
             			result.orderType = 1;
             		}
             	
@@ -558,29 +641,29 @@ public class QuerySqlParser extends Parser {
 
 
     // $ANTLR start "limitStatement"
-    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:41:1: limitStatement[QuerySqlStruct result] : LIMIT ( OFFSET )? INT ;
+    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:48:1: limitStatement[QuerySqlStruct result] : LIMIT ( OFFSET )? INT ;
     public final void limitStatement(QuerySqlStruct result) throws RecognitionException {
-        Token OFFSET8=null;
-        Token INT9=null;
+        Token OFFSET9=null;
+        Token INT10=null;
 
         try {
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:2: ( LIMIT ( OFFSET )? INT )
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:5: LIMIT ( OFFSET )? INT
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:2: ( LIMIT ( OFFSET )? INT )
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:5: LIMIT ( OFFSET )? INT
             {
-            match(input,LIMIT,FOLLOW_LIMIT_in_limitStatement163); 
+            match(input,LIMIT,FOLLOW_LIMIT_in_limitStatement183); 
 
-            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:11: ( OFFSET )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:11: ( OFFSET )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==OFFSET) ) {
-                alt12=1;
+            if ( (LA13_0==OFFSET) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:42:11: OFFSET
+                    // /E:/workspace/sql4nosql/target/classes/QuerySql.g:49:11: OFFSET
                     {
-                    OFFSET8=(Token)match(input,OFFSET,FOLLOW_OFFSET_in_limitStatement165); 
+                    OFFSET9=(Token)match(input,OFFSET,FOLLOW_OFFSET_in_limitStatement185); 
 
                     }
                     break;
@@ -588,13 +671,13 @@ public class QuerySqlParser extends Parser {
             }
 
 
-            INT9=(Token)match(input,INT,FOLLOW_INT_in_limitStatement168); 
+            INT10=(Token)match(input,INT,FOLLOW_INT_in_limitStatement188); 
 
 
-            		if((OFFSET8!=null?OFFSET8.getText():null) != null) {
-            			result.offset = Integer.parseInt((OFFSET8!=null?OFFSET8.getText():null).trim());
+            		if((OFFSET9!=null?OFFSET9.getText():null) != null) {
+            			result.offset = Integer.parseInt((OFFSET9!=null?OFFSET9.getText():null).trim());
             		}
-            		result.rowLimit = Integer.parseInt((INT9!=null?INT9.getText():null));
+            		result.rowLimit = Integer.parseInt((INT10!=null?INT10.getText():null));
             	
 
             }
@@ -617,32 +700,36 @@ public class QuerySqlParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_selectFromStatement_in_querySql27 = new BitSet(new long[]{0x000000000000A202L});
-    public static final BitSet FOLLOW_whereStatement_in_querySql31 = new BitSet(new long[]{0x0000000000002202L});
-    public static final BitSet FOLLOW_orderStatement_in_querySql39 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_limitStatement_in_querySql43 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_selectStatement_in_selectFromStatement56 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_FROM_in_selectFromStatement59 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NAME_in_selectFromStatement61 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_WS_in_selectFromStatement63 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SELECT_in_selectStatement75 = new BitSet(new long[]{0x0000000000020400L});
-    public static final BitSet FOLLOW_17_in_selectStatement78 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_selectFieldName_in_selectStatement80 = new BitSet(new long[]{0x0000000000050000L});
-    public static final BitSet FOLLOW_18_in_selectStatement84 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_selectFieldName_in_selectStatement86 = new BitSet(new long[]{0x0000000000050000L});
-    public static final BitSet FOLLOW_WS_in_selectStatement92 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_NAME_in_selectFieldName104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHERE_in_whereStatement117 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NAME_in_whereStatement119 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_OPTION_in_whereStatement121 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_FIELDVALUE_in_whereStatement123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERBY_in_orderStatement135 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_NAME_in_orderStatement137 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_WS_in_orderStatement140 = new BitSet(new long[]{0x0000000000010032L});
-    public static final BitSet FOLLOW_DESC_in_orderStatement144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ASC_in_orderStatement146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LIMIT_in_limitStatement163 = new BitSet(new long[]{0x0000000000000900L});
-    public static final BitSet FOLLOW_OFFSET_in_limitStatement165 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_INT_in_limitStatement168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_selectFromStatement_in_querySql27 = new BitSet(new long[]{0x0000000000005102L});
+    public static final BitSet FOLLOW_whereStatement_in_querySql30 = new BitSet(new long[]{0x0000000000001102L});
+    public static final BitSet FOLLOW_orderStatement_in_querySql37 = new BitSet(new long[]{0x0000000000000102L});
+    public static final BitSet FOLLOW_limitStatement_in_querySql41 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_selectStatement_in_selectFromStatement54 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_FROM_in_selectFromStatement57 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_NAME_in_selectFromStatement59 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_WS_in_selectFromStatement61 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SELECT_in_selectStatement73 = new BitSet(new long[]{0x0000000000010200L});
+    public static final BitSet FOLLOW_16_in_selectStatement76 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_selectFieldName_in_selectStatement78 = new BitSet(new long[]{0x0000000000028000L});
+    public static final BitSet FOLLOW_17_in_selectStatement82 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_selectFieldName_in_selectStatement84 = new BitSet(new long[]{0x0000000000028000L});
+    public static final BitSet FOLLOW_WS_in_selectStatement90 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_NAME_in_selectFieldName102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WHERE_in_whereStatement115 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_NAME_in_whereStatement117 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_OPTION_in_whereStatement119 = new BitSet(new long[]{0x0000000000040080L});
+    public static final BitSet FOLLOW_fieldValue_in_whereStatement121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_fieldValue136 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_NAME_in_fieldValue137 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_fieldValue138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_fieldValue141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERBY_in_orderStatement155 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_NAME_in_orderStatement157 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_WS_in_orderStatement160 = new BitSet(new long[]{0x0000000000008032L});
+    public static final BitSet FOLLOW_DESC_in_orderStatement164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ASC_in_orderStatement166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LIMIT_in_limitStatement183 = new BitSet(new long[]{0x0000000000000480L});
+    public static final BitSet FOLLOW_OFFSET_in_limitStatement185 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_INT_in_limitStatement188 = new BitSet(new long[]{0x0000000000000002L});
 
 }

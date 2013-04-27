@@ -104,9 +104,6 @@ public class Sql4PojoListConverter implements ISql4NosqlConverter{
 		}
 		List<T> filteredPojos = new ArrayList<T>();
 		String queryWhereFieldValue = querySqlStruct.getFieldValue();
-		if(queryWhereFieldValue.indexOf("'") != -1){//如果查询的是字符串类型的要去掉两个引号
-			queryWhereFieldValue = queryWhereFieldValue.replaceAll("'", "");
-		}
 		for (T pojo : pojoList) {
 			Object pojoWhereFieldValue = CommonUtils.getProperty(pojo, querySqlStruct.getWhereFieldName());
 			if(pojoWhereFieldValue == null){

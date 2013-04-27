@@ -11,7 +11,7 @@ package com.sohu.sql4nosql.build;
 }
 
 querySql returns [QuerySqlStruct result = new QuerySqlStruct()]
-	:	selectFromStatement[result] (whereStatement[result])? 
+	:	selectFromStatement[result] whereStatement[result]? 
 		orderStatement[result]? limitStatement[result]?;
 
 selectFromStatement [QuerySqlStruct result]
@@ -25,11 +25,18 @@ selectFieldName [QuerySqlStruct result]
 		$result.selectFields.add($NAME.text);
 	};
 whereStatement [QuerySqlStruct result]
- 	:	WHERE NAME OPTION FIELDVALUE{
+ 	:	WHERE NAME OPTION fieldValue[result] {
  		$result.whereFieldName = $NAME.text;
  		$result.option = $OPTION.text;
- 		$result.fieldValue = $FIELDVALUE.text;
  	};
+fieldValue [QuerySqlStruct result]
+	:	(('\''NAME'\'')|INT) {
+		if($NAME.text != null) {
+			$result.fieldValue = $NAME.text;
+		} else {
+			$result.fieldValue = $INT.text;
+		}
+	};
 
 orderStatement [QuerySqlStruct result]
 	:	ORDERBY NAME (WS+ (DESC|ASC?))? {
@@ -57,7 +64,6 @@ ASC	: ('asc'|'ASC');
 
 INT : ('0'..'9')+;
 NAME:('a'..'z'|'A'..'Z'|'_')+ ;
-FIELDVALUE :	('\''NAME'\'')|INT;
 OPTION	:	WS? ('>'|'<'|'=') WS?;
 WS : (' ' |'\t' |'\n' |'\r' );
 OFFSET : INT WS+;
