@@ -15,11 +15,11 @@ querySql returns [QuerySqlStruct result = new QuerySqlStruct()]
 		orderStatement[result]? limitStatement[result]?;
 
 selectFromStatement [QuerySqlStruct result]
-	:	selectStatement[result] FROM NAME WS?{
+	:	selectStatement[result] FROM NAME {
 		$result.tableName = $NAME.text;
 	};
 selectStatement [QuerySqlStruct result]
-	:	SELECT ('*'|selectFieldName[result] (',' selectFieldName[result])*) WS+ ;
+	:	SELECT (SELECT_ALL|selectFieldName[result] (COMMA selectFieldName[result])*) ;
 selectFieldName [QuerySqlStruct result]
 	:	NAME {
 		$result.selectFields.add($NAME.text);
@@ -30,7 +30,7 @@ whereStatement [QuerySqlStruct result]
  		$result.option = $OPTION.text;
  	};
 fieldValue [QuerySqlStruct result]
-	:	(('\''NAME'\'')|INT) {
+	:	((SINGLE_QUOTES NAME SINGLE_QUOTES)|INT) {
 		if($NAME.text != null) {
 			$result.fieldValue = $NAME.text;
 		} else {
@@ -39,31 +39,35 @@ fieldValue [QuerySqlStruct result]
 	};
 
 orderStatement [QuerySqlStruct result]
-	:	ORDERBY NAME (WS+ (DESC|ASC?))? {
+	:	ORDERBY NAME order[result]? {
 		result.orderFieldName = $NAME.text;
-		if($DESC.text != null) {
-			result.orderType = 1;
-		}
+		
 	};
+order [QuerySqlStruct result]
+	:	DESC{
+		result.orderType = 1;
+	}|ASC ;
 limitStatement [QuerySqlStruct result]
-	:	 LIMIT OFFSET? INT {
-		if($OFFSET.text != null) {
-			result.offset = Integer.parseInt($OFFSET.text.trim());
+	:	 LIMIT offset=INT? rowLimit=INT {
+		if($offset.text != null) {
+			result.offset = Integer.parseInt($offset.text.trim());
 		}
-		result.rowLimit = Integer.parseInt($INT.text);
+		result.rowLimit = Integer.parseInt($rowLimit.text);
 	};
 
 // more small range more prior
-SELECT:('select'|'SELECT')WS+ ;
-LIMIT :  WS+ ('limit'|'LIMIT') WS+;
-FROM : ('from'|'FROM') WS+;
-WHERE : WS+ ('where'|'WHERE') WS+;
-ORDERBY : WS+ ('order by'|'ORDER BY') WS+;
+SELECT:('select'|'SELECT');
+LIMIT :  ('limit'|'LIMIT') ;
+FROM : ('from'|'FROM') ;
+WHERE : ('where'|'WHERE') ;
+ORDERBY :  ('order by'|'ORDER BY') ;
 DESC : ('desc'|'DESC');
 ASC	: ('asc'|'ASC');
 
+SINGLE_QUOTES : '\'';
+SELECT_ALL : '*';
+COMMA : ',';
 INT : ('0'..'9')+;
 NAME:('a'..'z'|'A'..'Z'|'_')+ ;
-OPTION	:	WS? ('>'|'<'|'=') WS?;
-WS : (' ' |'\t' |'\n' |'\r' );
-OFFSET : INT WS+;
+OPTION	:	('>'|'<'|'=');
+WS : (' ' |'\t' |'\n' |'\r' ){skip();};
