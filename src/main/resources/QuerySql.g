@@ -12,6 +12,7 @@ package com.sohu.sql4nosql.build;
 
 querySql returns [QuerySqlStruct result = new QuerySqlStruct()]
 	:	selectFromStatement[result] whereStatement[result]? 
+		groupbyStatement[result]?
 		orderStatement[result]? limitStatement[result]?;
 
 selectFromStatement [QuerySqlStruct result]
@@ -37,11 +38,15 @@ fieldValue [QuerySqlStruct result]
 			$result.fieldValue = $INT.text;
 		}
 	};
-
+groupbyStatement [QuerySqlStruct result]
+	:	GROUP_BY groupName = NAME{
+		result.groupByFields.add($groupName.text);
+	}(COMMA groupName = NAME{
+		result.groupByFields.add($groupName.text);
+	})*;
 orderStatement [QuerySqlStruct result]
 	:	ORDERBY NAME order[result]? {
 		result.orderFieldName = $NAME.text;
-		
 	};
 order [QuerySqlStruct result]
 	:	DESC{
@@ -60,6 +65,7 @@ SELECT:('select'|'SELECT');
 LIMIT :  ('limit'|'LIMIT') ;
 FROM : ('from'|'FROM') ;
 WHERE : ('where'|'WHERE') ;
+GROUP_BY : 'group by'|'GROUP BY';
 ORDERBY :  ('order by'|'ORDER BY') ;
 DESC : ('desc'|'DESC');
 ASC	: ('asc'|'ASC');

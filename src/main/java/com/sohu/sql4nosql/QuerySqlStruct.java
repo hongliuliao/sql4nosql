@@ -37,6 +37,8 @@ public class QuerySqlStruct {
 	 */
 	public String tableName;
 	
+	public List<String> groupByFields = new ArrayList<String>();
+	
 	public String orderFieldName;
 	
 	/**
