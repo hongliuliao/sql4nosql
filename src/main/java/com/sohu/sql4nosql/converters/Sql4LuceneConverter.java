@@ -104,7 +104,7 @@ class SimpleSearcher {
 			}
 			return documents;
 		} catch (Exception e) {
-			throw new RuntimeException("search error which query:"+query+",start:"+start+",limit:"+limit);
+			throw new RuntimeException("search error which query:"+query+",start:"+start+",limit:"+limit, e);
 		}
 	} 
 }
