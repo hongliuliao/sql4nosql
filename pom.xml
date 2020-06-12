@@ -4,6 +4,9 @@
 	<groupId>sql4nosql</groupId>
 	<artifactId>sql4nosql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.antlr</groupId>
@@ -28,7 +31,7 @@
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
-			<version>7.1.0</version>
+			<version>3.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -37,4 +40,21 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<verbose>true</verbose>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<compilerArguments>
+						<sourcepath>${project.build.sourceDirectory}</sourcepath>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
